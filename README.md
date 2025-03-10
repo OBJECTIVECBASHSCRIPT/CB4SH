@@ -1,2 +1,2 @@
 # KOZAK 
-IDOR scripts.
+IDOR hunting framework.
