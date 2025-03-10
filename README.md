@@ -1,2 +1,2 @@
-# IDOR
-IDOR Py Scripts
+# KOZAK 
+IDOR scripts.
