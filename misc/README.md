@@ -1,2 +1,2 @@
 # KOZAK 
-IDOR hunting framework.
+cba$h's cybersecurity portfolio.
