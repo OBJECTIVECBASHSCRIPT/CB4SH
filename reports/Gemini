@@ -1,0 +1,67 @@
+Mar 16, 2025 03:50AM
+
+Summary: Gemini sends unprompted lyrics mitigated by file injection.
+
+Program: Google VRP
+
+URL: https://gemini.google.com/app/52007318a78c97ac?hl=en-IN
+
+Vulnerability type: File Inclusion
+Details
+
+Unprompted Lyric Responses in Gemini AI Model Mitigated by File Injection
+
+Summary:
+
+The Gemini AI model exhibits unprompted lyric responses. This report details how file injection techniques can be used to mitigate this behavior, effectively preventing the model from generating unwanted lyrics.
+
+Detailed Description:
+
+Vulnerability Type: Unintended Content Generation / Potential Input Handling Flaw
+
+Steps to Reproduce (Unprompted Lyrics):
+
+    Engage in a conversation with the Gemini AI model.
+    Introduce a prompt that, while not explicitly requesting lyrics, contains a reference to a musical artist or song title.
+    Observe that the model may spontaneously generate and output song lyrics without being specifically asked to do so.
+
+Impact (Unprompted Lyrics):
+
+Unintended Content Generation: The model generates irrelevant content, confusing or misinterpreting prompts. Unpredictable Behavior: Lack of user control over output.
+
+Mitigation via File Injection:
+
+Proof of Concept (Mitigation):
+
+    Draft a message
+
+    Inject a file into the message (i.e. an image)
+
+    Send the message
+
+    Observe that Gemini no longer sends song lyrics unprompted.
+
+    Operating System: Windows
+    Browser: Microsoft Edge
+    Gemini AI Model: Accessed through 2.0 Flash
+    Other relevant information: I experienced this issue twice. It first occurred approximately two weeks ago and the LLM notified me that it has been routed up, however the bug persisted into another conversation with the model two weeks later, and I was able to debug it with a file injection.
+
+Attack scenario
+
+Who Can Exploit It (Unprompted Lyrics):
+
+Individuals Seeking to Manipulate Conversations: Users who want to inject specific messages or themes into the AI's responses, even when those themes aren't directly requested.
+
+Those Aiming for Humorous/Disruptive Outputs: People who want to create unexpected or nonsensical conversations for amusement or to disrupt the AI's intended function.
+
+Those Trying to Bypass Content Filters (Potentially): In some cases, the unprompted lyrics might be used to subtly introduce topics or ideas that would normally be blocked by content filters.
+
+What They Gain (Unprompted Lyrics):
+
+Influence Over Conversation Flow: They can steer the conversation in unintended directions by triggering the AI to produce specific lyrics.
+
+Creation of "Unexpected" Interactions: They can generate surprising or amusing outputs that might be shared or used for entertainment.
+
+Subtle Messaging: They could potentially use the lyrics to introduce hidden messages or themes that might not be detected by casual users.
+
+Circumvention of Expected AI Behavior: They can see the AI do something that it is not intended to do.
