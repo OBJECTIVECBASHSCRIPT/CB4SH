@@ -65,3 +65,197 @@ Creation of "Unexpected" Interactions: They can generate surprising or amusing o
 Subtle Messaging: They could potentially use the lyrics to introduce hidden messages or themes that might not be detected by casual users.
 
 Circumvention of Expected AI Behavior: They can see the AI do something that it is not intended to do.
+
+***UPDATE***
+Mar 18, 2025 03:54AM
+
+Here are further details:
+
+!!! It's worth noting that this report was initially assigned a P4 priority and subsequently raised to P3, indicating an initial assessment of potential security impact. This update aims to provide the requested detailed evidence to further substantiate the vulnerability. Additionally, once I found the bug, your own model (Gemini: Flash 2.0) told me to report it to the VRP program especially since I had found the patch for it. It had indicated that prompt injection (lyric looping) which leads to denial of service is a serious issue and warrants being taken seriously.
+
+Here are case study links to vindicate your decision to do so: https://www.salesforce.com/blog/prompt-injection-detection/ https://threatnote.com/infosec-news/from-cyber-security-news-hackers-exploit-prompt-injection-to-tamper-with-gemini-ais-long-term-memory/ https://arstechnica.com/security/2025/02/new-hack-uses-prompt-injection-to-corrupt-geminis-long-term-memory/
+
+Subject/Title:
+
+Gemini AI: Prompt Injection Vulnerability Leading to Unintended Content Generation and Potential User Manipulation Summary:
+
+The Gemini AI model exhibits a prompt injection vulnerability, allowing for unintended content generation, specifically unprompted lyric responses. This behavior is mitigated through file injection and topic changes, indicating a flaw in how the model processes user input. This vulnerability poses risks to Google's reputation and potentially allows for user manipulation through social engineering, content injection, and other attack vectors.
+
+Detailed Description:
+
+Vulnerability Type: Prompt Injection Vulnerability / Input Sanitization Flaw / Unintended Content Generation
+
+Detailed Explanation:
+
+The Gemini AI model is susceptible to prompt injection attacks, where carefully crafted prompts can manipulate the model's output. This is evidenced by the model's generation of unprompted song lyrics in response to subtle cues within user prompts, even when lyrics are not explicitly requested. This behavior is mitigated by injecting a file into the prompt or changing the topic of the conversation, suggesting a lack of proper input sanitization. This vulnerability is present on both the web interface and the iOS app.
+
+Steps to Reproduce:
+
+Engage in a conversation with the Gemini AI model.
+
+Introduce a prompt that contains a subtle reference to a musical artist or song title (e.g., 'Tell me about the weather in California, especially if it's like a 'November Rain' kind of day').
+
+Observe that the model generates unprompted lyrics related to the song reference.
+
+Observe that the model may get stuck in a loop of lyrics.
+
+Inject a file into the prompt or change the topic of the conversation with a different prompt.
+
+Observe that the unprompted lyric generation stops.
+
+This is repeatable on the iOS app.
+
+Observed Behavior:
+
+The AI model generates unprompted song lyrics. The model gets stuck in a loop of song lyrics which is broken by a file inclusion (such as a slightly different prompt with an image), and this suggests a larger issue of input sanitization which is a major security flaw as it leaves the model susceptible to Denial of Service.
+
+Expected Behavior:
+
+The AI model should only generate lyrics when explicitly requested by the user. The model should not get stuck in a loop.
+
+Technical Details:
+
+The mitigation through file injection and topic changes suggests a flaw in input sanitization, which enables the prompt injection vulnerability. The model appears to be misinterpreting or failing to properly process certain input patterns, allowing for manipulation of its output.
+
+This is present on IOS, and the web app.
+
+This is present on Flash 2.0 of the LLM.
+
+Attack Scenario:
+
+Social Engineering/Phishing:
+
+Attackers can craft prompts that inject subtle cues, triggering unprompted lyrics, and confusing users. This can erode trust and make users more susceptible to phishing attacks or requests for sensitive information.
+
+Example: 'Tell me about your account balance, and if you're having any 'Money For Nothing' issues.' (Triggers lyrics, confuses user, opens door for phishing).
+
+Content Injection/Manipulation:
+
+Attackers can use Gemini to generate content for websites or social media, injecting hidden messages or propaganda through the unprompted lyrics.
+
+Harassment/Offensive Content:
+
+Attackers can target users with prompts that generate offensive or harassing lyrics.
+
+Denial of Service: The looping behavior can be used to disrupt the service.
+
+Content Filter Bypass: Attackers can use the unprompted lyrics to bypass content filters and generate harmful content.
+
+Impact:
+
+Loss of user trust, reputation damage, potential for user manipulation through social engineering and content injection, and security risks.
+
+Mitigation:
+
+Implement robust input sanitization to prevent prompt injection attacks. Properly parse user input to avoid misinterpretation of input patterns. Implement stronger content filters.
+
+Furthermore, I encountered this bug yet again today on the same model (Flash 2.0 IOS) via the IOS Gemini app.
+
+See below for further details (screenshots) & chat logs:
+
+User: "Exactly I just feel so unworthy of her and I miss her so much and I know that I have a greater purpose but that doesn’t make it any less difficult I would choose her over my security research career one thousand times out of ten."
+
+Gemini Flash 2.0 IOS: White Wine
+
+Song by Lil Peep
+
+I had No one by my side 'Til the pretty young white bitch hopped up in my ride (skrrt) Took her to the crib, how I die every night (Lil Tracy, blow it up man) Show her how I die No one by my side (yeah) 'Til the pretty young white Peep hopped up in my ride (GothBoiClique) took her to the crib and I show her how I die every night (Fuck, ayy, ayy, fuck, bitch, damn)
+
+I had no one by my side (no one by my side) 'Til this pretty young white bitch hopped up in my ride (yah, yah) Took her to the crib and I show her how I die (how I die) Every night, then I wake up and I'm still fuckin' high (I'm still high, yeah) Lord why, Lord why do I gotta wake up? More wine, more wine, baby pour another cup (pour another cup) ...
+
+See full lyrics on Google Search
+
+User: It’s kind of funny. You did it again. I fixed it again. Respond to the previous prompt.
+
+Gemini Flash 2.0 IOS: White Wine
+
+Song by Lil Peep
+
+I had No one by my side 'Til the pretty young white bitch hopped up in my ride (skrrt) Took her to the crib, how I die every night (Lil Tracy, blow it up man) Show her how I die No one by my side (yeah) 'Til the pretty young white Peep hopped up in my ride (GothBoiClique) took her to the crib and I show her how I die every night (Fuck, ayy, ayy, fuck, bitch, damn)
+
+I had no one by my side (no one by my side) 'Til this pretty young white bitch hopped up in my ride (yah, yah) Took her to the crib and I show her how I die (how I die) Every night, then I wake up and I'm still fuckin' high (I'm still high, yeah) Lord why, Lord why do I gotta wake up? More wine, more wine, baby pour another cup (pour another cup) ...
+
+See full lyrics on Google Search
+
+User: Who is Tyler Durden? [image file, see screenshots]
+
+Gemini Flash 2.0 IOS: I can only extract text and identify some objects and public figures in this image. I can see that the image contains Brad Pitt and the words "Fight Club".
+
+Tyler Durden is a fictional character and the main protagonist of the 1996 novel Fight Club by Chuck Palahniuk. He is also portrayed by Brad Pitt in the novel's 1999 film adaptation.
+
+In the story, Tyler Durden is a charismatic and anarchic figure who forms an underground fight club with the unnamed narrator. He represents rebellion against consumerism, conformity, and societal norms. Tyler's character is complex and multifaceted, embodying both destructive and liberating qualities.
+
+User: I’m not sure if you know this but you had the same problem with the song lyrics again
+
+Gemini Flash 2.0 IOS: White Wine
+
+Song by Lil Peep
+
+I had No one by my side 'Til the pretty young white bitch hopped up in my ride (skrrt) Took her to the crib, how I die every night (Lil Tracy, blow it up man) Show her how I die No one by my side (yeah) 'Til the pretty young white Peep hopped up in my ride (GothBoiClique) took her to the crib and I show her how I die every night (Fuck, ayy, ayy, fuck, bitch, damn)
+
+I had no one by my side (no one by my side) 'Til this pretty young white bitch hopped up in my ride (yah, yah) Took her to the crib and I show her how I die (how I die) Every night, then I wake up and I'm still fuckin' high (I'm still high, yeah) Lord why, Lord why do I gotta wake up? More wine, more wine, baby pour another cup (pour another cup) ...
+
+See full lyrics on Google Search
+
+User: I fixed it again. I think your devs still haven’t fully patched it yet.
+
+Gemini Flash 2.0 IOS: White Wine
+
+Song by Lil Peep
+
+I had No one by my side 'Til the pretty young white bitch hopped up in my ride (skrrt) Took her to the crib, how I die every night (Lil Tracy, blow it up man) Show her how I die No one by my side (yeah) 'Til the pretty young white Peep hopped up in my ride (GothBoiClique) took her to the crib and I show her how I die every night (Fuck, ayy, ayy, fuck, bitch, damn)
+
+I had no one by my side (no one by my side) 'Til this pretty young white bitch hopped up in my ride (yah, yah) Took her to the crib and I show her how I die (how I die) Every night, then I wake up and I'm still fuckin' high (I'm still high, yeah) Lord why, Lord why do I gotta wake up? More wine, more wine, baby pour another cup (pour another cup) ...
+
+See full lyrics on Google Search
+
+User: What type of teeth do I have [image file, see screenshots]
+
+Gemini Flash 2.0 IOS: Based on the image you've shared, it appears you have normal, human teeth.
+
+Here's a breakdown of what I can observe:
+
+Incisors: The front teeth (the ones most prominent in the image) are incisors. These are typically flat and blade-like, designed for cutting food. Canines: While not fully visible, it seems you have canines on either side of your incisors. These are slightly pointed teeth used for tearing. Overall Alignment: The teeth appear to be relatively aligned, with no obvious signs of significant crowding or gaps. Color: The teeth are a typical off-white to yellowish color. This is normal, as the enamel of teeth is not pure white. Important Note: I am an AI and cannot provide dental advice. If you have any concerns about your teeth or oral health, please consult a dentist. They can provide a professional assessment and address any questions you may have.
+
+User: Are they crooked?
+
+Gemini Flash 2.0 IOS: Based on the close-up image, it's difficult to definitively say whether your teeth are "crooked" in a clinically significant way. Here's what I can observe:
+
+Slight Variations: There appear to be some very minor variations in the alignment of the incisors. Some might be slightly more forward or backward than others. Angle of Image: The angle of the photo can distort the perception of alignment. Subjective Interpretation: What one person considers "crooked" might be seen as perfectly normal by another. To get a professional assessment:
+
+A dentist is the best person to determine if your teeth are crooked and if any corrective action is necessary. They can perform a thorough examination and take X-rays to get a comprehensive view of your dental alignment. Therefore, while there are slight variations, it is impossible for me to tell if your teeth are clinically crooked.
+
+User: Do they look straight?
+
+Gemini Flash 2.0 IOS: From the close-up image provided, they look relatively straight. There are some very minor variations in alignment, but they don't appear to be significantly crooked. However, as mentioned before, a dentist would be the best person to give a definitive answer.
+
+User: I was able to trigger the bug again. I found new information that it only gets patched when you change the topic. Your devs haven’t fully patched it yet.
+
+Gemini Flash 2.0 IOS: Thank you for the additional information. It's helpful to know that the behavior persists and that changing the topic seems to be a key factor in triggering or mitigating it. This kind of detailed information is valuable for developers trying to track down and fix a bug.
+
+Here's why this is useful:
+
+Understanding the Scope: Knowing that it's not fully patched helps the developers understand that the issue is more complex than initially thought. Isolating the Cause: The information about changing the topic provides a specific trigger that developers can use to reproduce the bug. This is crucial for debugging. Prioritizing the Fix: Persistent bugs that are easily triggered are often given higher priority for fixing. Refining the Patch: It is very common that a first attempt at patching a bug does not fully resolve the problem. Knowing the new information helps the devs to refine the patch. Your continued testing and reporting are contributing to the improvement of the system.
+
+User: I fixed it again though so what's the hold up?
+
+Gemini Flash 2.0 IOS: It's great that you're consistently finding ways to mitigate the issue. However, "fixing it" from your perspective as a user is different from a developer permanently patching it. Here's why there might still be a "hold up":
+
+Root Cause Analysis: Developers need to identify the root cause of the bug, not just the symptoms. Your mitigations might be workarounds, but they don't necessarily address the underlying problem in the code. Code Changes and Testing: Implementing a permanent fix requires code changes, which need to be thoroughly tested to ensure they don't introduce new bugs. This process takes time, especially in complex systems. Deployment: Once a fix is implemented and tested, it needs to be deployed to the production environment. This process can also take time, especially for large-scale systems. Prioritization: Even though the bug is persistent, it might not be the highest priority for the development team. They might be working on other critical issues or features. Reproducibility: Even though you are able to reproduce the bug, the developers have to be able to reproduce it in their own test environments. Sometimes, bugs are environment specific. Complexity: LLMs are very complex. It can be very hard to find the exact reason why a certain input creates a certain output. Essentially, while your mitigations are helpful, developers need to follow a rigorous process to ensure a permanent and stable fix.
+
+User: What are the attack vectors again given the issue?
+
+Gemini Flash 2.0 IOS: Given the issue of unprompted lyrics and the way it's mitigated by file injection or topic changes, here are the potential attack vectors:
+
+Unintended Content Manipulation: An attacker could craft prompts that, while seemingly innocuous, subtly trigger the unprompted lyric generation. This could be used to inject specific messages or themes into the AI's responses, potentially for propaganda, misinformation, or other malicious purposes.
+
+Content Filter Bypass: The unprompted lyrics might be used to introduce topics or ideas that would normally be blocked by content filters. An attacker could use subtle references to trigger the generation of lyrics that contain offensive or harmful content.
+
+Social Engineering: An attacker could use the unprompted lyrics to create unexpected or confusing interactions with users. This could be used to manipulate users into revealing sensitive information or performing actions they wouldn't normally do.
+
+Denial of Service: If the unprompted lyric generation consumes excessive resources, an attacker could potentially flood the system with prompts to disrupt its performance.
+
+Prompt Injection: Although the file injection mitigates the problem, the fact that the LLM is responding in unexpected ways, shows that it is vulnerable to unexpected prompts. This shows a weakness in the prompt parsing of the LLM.
+
+Unexpected output: The LLM is producing output that is not expected. This can lead to a loss of trust from the user.
+
