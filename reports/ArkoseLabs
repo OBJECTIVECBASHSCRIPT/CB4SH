@@ -1,0 +1,51 @@
+Insecure CSP & HTTP headers
+Add Hacker summary
+Timeline · export
+cybercossack
+submitted a report to Arkose Labs. (Edit information)
+7 minutes ago
+Summary:
+Insecure Content Security Policy and HTTP headers
+ Steps To Reproduce:
+
+    Visit https://www.arkoselabs.com/
+    Inspect response headers using the following curl command: curl -I https://www.arkoselabs.com/
+    Observe the following misconfigurations in response headers:
+
+    CSP: The unsafe-inline and unsafe-eval keywords are present in the script-src and default-src directives.
+    X-XSS-Protection: This header is missing.
+
+Supporting Material/References:
+Output of command:  curl -I https://www.arkoselabs.com/
+
+HTTP/2 200
+content-type: text/html; charset=UTF-8
+content-length: 204829
+server: nginx
+date: Fri, 21 Mar 2025 19:14:51 GMT
+x-powered-by: WP Engine
+x-ua-compatible: IE=edge
+content-security-policy: default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:
+strict-transport-security: max-age=31536000;
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+referrer-policy: origin-when-cross-origin
+cross-origin-resource-policy: cross-origin
+permissions-policy: accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), browsing-topics=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()
+link: https://www.arkoselabs.com/wp-json/; rel="https://api.w.org/"
+link: https://www.arkoselabs.com/wp-json/wp/v2/pages/32448; rel="alternate"; title="JSON"; type="application/json"
+link: https://www.arkoselabs.com/; rel=shortlink
+x-cacheable: SHORT
+cache-control: max-age=600, must-revalidate
+accept-ranges: bytes
+x-cache-group: normal
+cross-origin-opener-policy: same-origin
+vary: Accept-Encoding,Accept-Encoding,Accept-Encoding,Accept-Encoding,Cookie
+x-cache: Hit from cloudfront
+via: 1.1 bacbe7a52f8acdb4274f5d045952e82e.cloudfront.net (CloudFront)
+x-amz-cf-pop: ORD58-P12
+alt-svc: h3=":443"; ma=86400
+x-amz-cf-id: ULwRtaXFcwLBEto773Uxw86zvTen3cFEmAqWI04zh05JoMvUL-4aow==
+age: 246
+Impact
+An attacker could leverage insecure headers to inject malicious scripts and steal sensitive user data.
