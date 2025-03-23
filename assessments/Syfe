@@ -1,1 +1,364 @@
 
+Syfe Security Assessment 
+Report Date: 3-23-2025 
+Researcher: cybercossack 
+Target: Syfe (https://www.syfe.com) 
+Scope: Web application, API, authentication mechanisms 
+Methodology: Manual and automated security testing 
+
+1. Introduction This report details my security assessment of Syfe as part of HackerOne’s private bug bounty program. 
+My primary objective was to identify potential vulnerabilities, focusing on IDOR, SSRF, XSS, and SQLi. Despite extensive testing, no vulnerabilities were found. 
+This exercise served as a valuable learning experience, particularly in cloud-based security infrastructure, API security, and enumeration limitations. 
+
+2. Enumeration & Initial Testing 
+2.1 Web Application & API Reconnaissance 
+• I attempted to access Syfe’s API endpoints through Burp Suite, but received a 404 Not Found response. 
+• A likely cause of this error was the lack of valid credentials, as Syfe requires an account for API access.
+• Creating an account was not an option, as Syfe mandates real ID verification, which raises privacy concerns, especially given its operational ties to Singapore and potential connections to China (as noted in historical data from the Wayback Machine). 
+2.2 Automated Security Scanning I ran multiple security scanners to detect potential vulnerabilities: • Wapiti (Web vulnerability scanner) → No findings. 
+• Kolimbus (RCE scanner) → No findings. 
+• Burp Suite Scanner → No findings. 
+• Nmap & Cloudflare Bypass Attempts 
+→ Unsuccessful due to Cloudflare protection. 
+
+3. Manual Testing 
+3.1 Parameter-Based Attacks I manually tested various parameters to identify potential security flaws:
+• IDOR → No sensitive object references were found. 
+• SSRF → Attempts to trigger server-side requests failed. 
+• XSS → No input reflection was detected. 
+• SQLi → No injection points were identified.
+
+4. Observations & Challenges 
+• Extensive Security Measures: Syfe’s Cloudflare protection, real ID requirements, and locked-down API significantly reduce the attack surface. 
+• High Report Volume: With 157 resolved reports, most low-hanging vulnerabilities are likely patched. 
+• Credential Barrier: Full API testing requires a verified user account, limiting unauthenticated testing. 
+
+5. Future Research & Recommendations If revisited in the future, the following areas could be explored:
+• Authenticated Testing (if an account can be safely created). 
+• Cloudflare Bypass Methods (advanced fingerprinting, WAF evasion techniques).
+• Deep API Recon (once endpoint structure is better understood). 
+
+6. Conclusion Despite not finding exploitable vulnerabilities, this engagement provided insights into high-security financial platforms and reinforced the importance of API authentication barriers in modern web applications. 
+Given my current financial priorities, I am shifting focus to more promising targets but may return to Syfe as my expertise evolves. 
+
+7. Proof of Concept:
+
+• Burp Suite Logs:
+1742697857442	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742697857441	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742697857510	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/heartbeat?&t=1742697857356	0	0
+1742697857504	HTTP	REQUEST	GET	https://wallet.okx.com/priapi/v1/wallet/network/blinks/url?t=1742697857332	0	0
+1742697857510	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/currencies?locale=en_US&t=1742697857337	0	0
+1742697857505	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/common/chain/info/new2?t=1742697857337	0	0
+1742697857509	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/coins/support/addCoin?t=1742697857335	0	0
+1742697857504	HTTP	REQUEST	GET	https://static.okx.com/cdn/assets/files/224/95D565EF66E7DFF9.txt?&t=1742697857345	0	0
+1742697857509	HTTP	REQUEST	POST	https://wallet.okx.com/v1/deposit/plugin/address/checkDAppUrl?t=1742697857335	0	0
+1742697857503	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/get/whitelist	0	0
+1742697857506	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/common/test/networks2?t=1742697857331	0	0
+1742697857504	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742697857337	0	0
+1742697857506	HTTP	REQUEST	GET	https://wallet.okx.cab/v1/deposit/plugin/heartbeat?&t=1742697857356	0	0
+1742697857504	HTTP	REQUEST	GET	https://wallet.okx.ac/v1/deposit/plugin/heartbeat?&t=1742697857356	0	0
+1742697857509	HTTP	REQUEST	GET	https://wallet.okex.org/v1/deposit/plugin/heartbeat?&t=1742697857345	0	0
+1742697857507	HTTP	REQUEST	GET	https://static.okx.cab/cdn/assets/files/224/95D565EF66E7DFF9.txt?&t=1742697857345	0	0
+1742697857504	HTTP	REQUEST	GET	https://wallet.ouxyi.cash/v1/deposit/plugin/heartbeat?&t=1742697857345	0	0
+1742697857505	HTTP	REQUEST	GET	https://static.coinall.ltd/cdn/assets/files/224/95D565EF66E7DFF9.txt?&t=1742697857345	0	0
+1742697859349	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742697859342	0	0
+1742697859410	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742697859343	0	0
+1742697861354	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742697861348	0	0
+1742697861417	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742697861349	0	0
+1742697862389	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742697863360	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742697863355	0	0
+1742697864110	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742697863356	0	0
+1742697865367	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742697865362	0	0
+1742697866031	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742697865362	0	0
+1742697867366	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742697867363	0	0
+1742697877363	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742697919685	HTTP	REQUEST	GET	https://www.google.com/search?q=api&oq=api&pf=op&sourceid=chrome&ie=UTF-8	0	0
+1742697937359	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742697949624	HTTP	REQUEST	POST	https://wallet.okx.com/priapi/v2/wallet/url/checkv2?t=1742697949621	0	0
+1742697969631	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742697988468	HTTP	REQUEST	POST	https://wallet.okx.com/priapi/v2/wallet/url/checkv2?t=1742697988465	0	0
+1742697997958	HTTP	REQUEST	GET	http://www.api.syfe.com/	0	0
+1742698008473	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742698103389	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742698107338	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742698345410	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742698457311	HTTP	REQUEST	GET	https://wallet.okx.com/priapi/v1/wallet/network/blinks/url?t=1742698457306	0	0
+1742698459363	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742698459347	0	0
+1742698461364	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742698461353	0	0
+1742698463454	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742698463387	0	0
+1742698465407	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742698465396	0	0
+1742698467488	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742698467427	0	0
+1742698477376	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742698588465	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742698832480	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742699057324	HTTP	REQUEST	GET	https://wallet.okx.com/priapi/v1/wallet/network/blinks/url?t=1742699057310	0	0
+1742699059420	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742699059374	0	0
+1742699061403	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742699061382	0	0
+1742699063444	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742699063415	0	0
+1742699065454	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742699065424	0	0
+1742699067500	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742699067458	0	0
+1742699077349	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742699077457	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742699323453	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742699570468	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742699657312	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/common/test/networks2?t=1742699657307	0	0
+1742699657312	HTTP	REQUEST	GET	https://wallet.okx.com/priapi/v1/wallet/network/blinks/url?t=1742699657308	0	0
+1742699659344	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742699659341	0	0
+1742699661345	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742699661343	0	0
+1742699665467	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742699665397	0	0
+1742699667489	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742699667428	0	0
+1742699663348	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742699663345	0	0
+1742699677343	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742699818511	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742700067507	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742700257316	HTTP	REQUEST	GET	https://wallet.okx.com/priapi/v1/wallet/network/blinks/url?t=1742700257308	0	0
+1742700259346	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742700259341	0	0
+1742700261350	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742700261346	0	0
+1742700263356	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742700263351	0	0
+1742700265355	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742700265353	0	0
+1742700267360	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742700267357	0	0
+1742700277319	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742700317511	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742700567518	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742700817541	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742700857315	HTTP	REQUEST	GET	https://wallet.okx.com/priapi/v1/wallet/network/blinks/url?t=1742700857308	0	0
+1742700859343	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742700859340	0	0
+1742700861347	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742700861342	0	0
+1742700863357	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742700863349	0	0
+1742700865359	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742700865352	0	0
+1742700867359	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742700867355	0	0
+1742700877317	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742701067550	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742706330812	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742706470560	HTTP	REQUEST	POST	https://wallet.okx.com/v1/deposit/plugin/address/checkDAppUrl?t=1742706470558	0	0
+1742706470560	HTTP	REQUEST	GET	https://wallet.okx.com/priapi/v1/wallet/network/blinks/url?t=1742706470558	0	0
+1742706470559	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/common/test/networks2?t=1742706470555	0	0
+1742706472595	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742706472592	0	0
+1742706474596	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742706474594	0	0
+1742706476601	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742706476598	0	0
+1742706478606	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742706478603	0	0
+1742706480611	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742706480607	0	0
+1742706490562	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/get/whitelist	0	0
+1742706490569	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742706580818	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742706830821	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742707070559	HTTP	REQUEST	GET	https://wallet.okx.com/priapi/v1/wallet/network/blinks/url?t=1742707070556	0	0
+1742707072597	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742707072592	0	0
+1742707074597	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742707074595	0	0
+1742707076602	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742707076598	0	0
+1742707078604	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742707078601	0	0
+1742707080612	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742707080606	0	0
+1742707080820	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742707090563	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+• Nmap Scan Output:
+# Nmap 7.95 scan initiated Sat Mar 22 10:09:28 2025 as: /usr/lib/nmap/nmap --privileged -sC -sV -T4 -p- -oN syfe_nmap_scan.txt ag.syfe.com blog.syfe.com email.syfe.com help.syfe.com hk.syfe.com www.syfe.com
+Nmap scan report for ag.syfe.com (104.18.6.131)
+Host is up (0.037s latency).
+Other addresses for ag.syfe.com (not scanned): 2606:4700::6812:683 2606:4700::6812:783 104.18.7.131
+Not shown: 65532 filtered tcp ports (no-response)
+PORT     STATE SERVICE  VERSION
+80/tcp   open  http     Cloudflare http proxy
+|_http-title: Attention Required! | Cloudflare
+|_http-server-header: cloudflare
+443/tcp  open  ssl/http Cloudflare http proxy
+| ssl-cert: Subject: commonName=syfe.com
+| Subject Alternative Name: DNS:syfe.com, DNS:*.syfe.com
+| Not valid before: 2025-02-07T06:22:53
+|_Not valid after:  2025-05-08T07:22:45
+|_http-server-header: cloudflare
+|_http-title: Attention Required! | Cloudflare
+8080/tcp open  http     Cloudflare http proxy
+|_http-title: Attention Required! | Cloudflare
+|_http-server-header: cloudflare
+
+Nmap scan report for blog.syfe.com (104.18.7.131)
+Host is up (0.036s latency).
+Other addresses for blog.syfe.com (not scanned): 2606:4700::6812:683 2606:4700::6812:783 104.18.6.131
+Not shown: 65532 filtered tcp ports (no-response)
+PORT     STATE SERVICE  VERSION
+80/tcp   open  http     Cloudflare http proxy
+|_http-server-header: cloudflare
+|_http-title: Attention Required! | Cloudflare
+443/tcp  open  ssl/http Cloudflare http proxy
+|_http-server-header: cloudflare
+|_http-title: Attention Required! | Cloudflare
+| ssl-cert: Subject: commonName=blog.syfe.com
+| Subject Alternative Name: DNS:blog.syfe.com, DNS:*.blog.syfe.com
+| Not valid before: 2025-03-09T04:22:19
+|_Not valid after:  2025-06-07T05:22:14
+8080/tcp open  http     Cloudflare http proxy
+|_http-server-header: cloudflare
+|_http-title: Attention Required! | Cloudflare
+
+Nmap scan report for help.syfe.com (216.198.53.1)
+Host is up (0.039s latency).
+Other addresses for help.syfe.com (not scanned): 216.198.54.1
+Not shown: 65532 filtered tcp ports (no-response)
+PORT     STATE SERVICE  VERSION
+80/tcp   open  http     Cloudflare http proxy
+|_http-title: Did not follow redirect to https://help.syfe.com/
+|_http-server-header: cloudflare
+443/tcp  open  ssl/http Cloudflare http proxy
+| http-title: Just a moment...
+|_Requested resource was https://help.syfe.com/hc/en-us
+|_http-server-header: cloudflare
+| http-robots.txt: 40 disallowed entries (15 shown)
+| /children /groups /organizations /requests 
+| /registration /plans /accounts /account /proxy /rules /tags 
+|_/ticket_fields /reports /search /slas
+| ssl-cert: Subject: commonName=help.syfe.com
+| Subject Alternative Name: DNS:help.au.syfe.com, DNS:help.hk.syfe.com, DNS:help.syfe.com
+| Not valid before: 2025-03-11T23:51:19
+|_Not valid after:  2025-06-09T23:51:18
+8080/tcp open  http     Cloudflare http proxy
+|_http-server-header: cloudflare
+|_http-title: Did not follow redirect to https://help.syfe.com/
+
+Nmap scan report for hk.syfe.com (207.174.61.1)
+Host is up (0.038s latency).
+Other addresses for hk.syfe.com (not scanned): 91.197.243.143
+Not shown: 65533 filtered tcp ports (no-response)
+PORT    STATE SERVICE    VERSION
+80/tcp  open  tcpwrapped
+|_http-title: Did not follow redirect to https://hk.syfe.com/
+443/tcp open  tcpwrapped
+|_http-title: Site doesn't have a title.
+| ssl-cert: Subject: commonName=hk.syfe.com
+| Subject Alternative Name: DNS:hk.syfe.com
+| Not valid before: 2025-03-14T00:46:16
+|_Not valid after:  2025-06-12T00:46:15
+
+Nmap scan report for email.syfe.com (104.18.6.131)
+Host is up (0.036s latency).
+Other addresses for email.syfe.com (not scanned): 2606:4700::6812:683 2606:4700::6812:783 104.18.7.131
+Not shown: 65532 filtered tcp ports (no-response)
+PORT     STATE SERVICE  VERSION
+80/tcp   open  http     Cloudflare http proxy
+|_http-server-header: cloudflare
+|_http-title: Attention Required! | Cloudflare
+443/tcp  open  ssl/http Cloudflare http proxy
+|_http-server-header: cloudflare
+| ssl-cert: Subject: commonName=syfe.com
+| Subject Alternative Name: DNS:syfe.com, DNS:*.syfe.com
+| Not valid before: 2025-02-07T06:22:53
+|_Not valid after:  2025-05-08T07:22:45
+|_http-title: Attention Required! | Cloudflare
+8080/tcp open  http     Cloudflare http proxy
+|_http-title: Attention Required! | Cloudflare
+|_http-server-header: cloudflare
+
+Nmap scan report for www.syfe.com (104.18.6.131)
+Host is up (0.035s latency).
+Other addresses for www.syfe.com (not scanned): 2606:4700::6812:783 2606:4700::6812:683 104.18.7.131
+Not shown: 65532 filtered tcp ports (no-response)
+PORT     STATE SERVICE  VERSION
+80/tcp   open  http     Cloudflare http proxy
+|_http-title: Attention Required! | Cloudflare
+|_http-server-header: cloudflare
+443/tcp  open  ssl/http Cloudflare http proxy
+|_http-server-header: cloudflare
+| ssl-cert: Subject: commonName=syfe.com
+| Subject Alternative Name: DNS:syfe.com, DNS:*.syfe.com
+| Not valid before: 2025-02-07T06:22:53
+|_Not valid after:  2025-05-08T07:22:45
+|_http-title: Attention Required! | Cloudflare
+8080/tcp open  http     Cloudflare http proxy
+|_http-server-header: cloudflare
+|_http-title: Attention Required! | Cloudflare
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Mar 22 10:18:10 2025 -- 6 IP addresses (6 hosts up) scanned in 521.92 seconds
+
+• Scanner Output Status: No Vulnerabilities 
+
+[+] Started scan for URL "https://www.syfe.com"
+
+[*] Trying method "OPTIONS" with magic final part "/~1/.rem"
+[*] Trying method "POST" with magic final part "/~1/.rem"
+[*] Trying method "DEBUG" with magic final part "/~1/.rem"
+[*] Trying method "TRACE" with magic final part "/~1/.rem"
+[*] Trying method "GET" with magic final part "/~1/.rem"
+[*] Trying method "HEAD" with magic final part "/~1/.rem"
+[*] Trying method "OPTIONS" with magic final part "/~1/"
+[*] Trying method "POST" with magic final part "/~1/"
+[*] Trying method "DEBUG" with magic final part "/~1/"
+[*] Trying method "TRACE" with magic final part "/~1/"
+[*] Trying method "GET" with magic final part "/~1/"
+[*] Trying method "HEAD" with magic final part "/~1/"
+[*] Trying method "OPTIONS" with magic final part "\a.aspx"
+[*] Trying method "POST" with magic final part "\a.aspx"
+[*] Trying method "DEBUG" with magic final part "\a.aspx"
+[*] Trying method "TRACE" with magic final part "\a.aspx"
+[*] Trying method "GET" with magic final part "\a.aspx"
+[*] Trying method "HEAD" with magic final part "\a.aspx"
+[*] Trying method "OPTIONS" with magic final part "\a.asp"
+[*] Trying method "POST" with magic final part "\a.asp"
+[*] Trying method "DEBUG" with magic final part "\a.asp"
+[*] Trying method "TRACE" with magic final part "\a.asp"
+[*] Trying method "GET" with magic final part "\a.asp"
+[*] Trying method "HEAD" with magic final part "\a.asp"
+[*] Trying method "OPTIONS" with magic final part "/a.aspx"
+[*] Trying method "POST" with magic final part "/a.aspx"
+[*] Trying method "DEBUG" with magic final part "/a.aspx"
+[*] Trying method "TRACE" with magic final part "/a.aspx"
+[*] Trying method "GET" with magic final part "/a.aspx"
+[*] Trying method "HEAD" with magic final part "/a.aspx"
+[*] Trying method "OPTIONS" with magic final part "/a.asp"
+[*] Trying method "POST" with magic final part "/a.asp"
+[*] Trying method "DEBUG" with magic final part "/a.asp"
+[*] Trying method "TRACE" with magic final part "/a.asp"
+[*] Trying method "GET" with magic final part "/a.asp"
+[*] Trying method "HEAD" with magic final part "/a.asp"
+[*] Trying method "OPTIONS" with magic final part "/a.shtml"
+[*] Trying method "POST" with magic final part "/a.shtml"
+[*] Trying method "DEBUG" with magic final part "/a.shtml"
+[*] Trying method "TRACE" with magic final part "/a.shtml"
+[*] Trying method "GET" with magic final part "/a.shtml"
+[*] Trying method "HEAD" with magic final part "/a.shtml"
+[*] Trying method "OPTIONS" with magic final part "/a.asmx"
+[*] Trying method "POST" with magic final part "/a.asmx"
+[*] Trying method "DEBUG" with magic final part "/a.asmx"
+[*] Trying method "TRACE" with magic final part "/a.asmx"
+[*] Trying method "GET" with magic final part "/a.asmx"
+[*] Trying method "HEAD" with magic final part "/a.asmx"
+[*] Trying method "OPTIONS" with magic final part "/a.ashx"
+[*] Trying method "POST" with magic final part "/a.ashx"
+[*] Trying method "DEBUG" with magic final part "/a.ashx"
+[*] Trying method "TRACE" with magic final part "/a.ashx"
+[*] Trying method "GET" with magic final part "/a.ashx"
+[*] Trying method "HEAD" with magic final part "/a.ashx"
+[*] Trying method "OPTIONS" with magic final part "/a.config"
+[*] Trying method "POST" with magic final part "/a.config"
+[*] Trying method "DEBUG" with magic final part "/a.config"
+[*] Trying method "TRACE" with magic final part "/a.config"
+[*] Trying method "GET" with magic final part "/a.config"
+[*] Trying method "HEAD" with magic final part "/a.config"
+[*] Trying method "OPTIONS" with magic final part "/a.php"
+[*] Trying method "POST" with magic final part "/a.php"
+[*] Trying method "DEBUG" with magic final part "/a.php"
+[*] Trying method "TRACE" with magic final part "/a.php"
+[*] Trying method "GET" with magic final part "/a.php"
+[*] Trying method "HEAD" with magic final part "/a.php"
+[*] Trying method "OPTIONS" with magic final part "/a.jpg"
+[*] Trying method "POST" with magic final part "/a.jpg"
+[*] Trying method "DEBUG" with magic final part "/a.jpg"
+[*] Trying method "TRACE" with magic final part "/a.jpg"
+[*] Trying method "GET" with magic final part "/a.jpg"
+[*] Trying method "HEAD" with magic final part "/a.jpg"
+[*] Trying method "OPTIONS" with magic final part "/webresource.axd"
+[*] Trying method "POST" with magic final part "/webresource.axd"
+[*] Trying method "DEBUG" with magic final part "/webresource.axd"
+[*] Trying method "TRACE" with magic final part "/webresource.axd"
+[*] Trying method "GET" with magic final part "/webresource.axd"
+[*] Trying method "HEAD" with magic final part "/webresource.axd"
+[*] Trying method "OPTIONS" with magic final part "/a.xxx"
+[*] Trying method "POST" with magic final part "/a.xxx"
+[*] Trying method "DEBUG" with magic final part "/a.xxx"
+[*] Trying method "TRACE" with magic final part "/a.xxx"
+[*] Trying method "GET" with magic final part "/a.xxx"
+[*] Trying method "HEAD" with magic final part "/a.xxx"
+[-] Host "https://www.syfe.com" seems to be not vulnerable or no short name was found
+
+[+] Scan completed in 780 seconds
+[+] Requests sent: 336
