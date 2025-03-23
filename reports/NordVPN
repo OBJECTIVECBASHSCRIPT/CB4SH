@@ -1,0 +1,31 @@
+Dear NordVPN Team,
+
+I hope this message finds you well. I’m reaching out regarding a specific statement in one of your security articles that I believe may benefit from clarification.
+
+The article defines buffer overflow attacks and refers to them as the "most common type of DDoS attack." While buffer overflow attacks are indeed a significant security concern, there seems to be some confusion in the terminology that could be misleading to readers.
+
+
+URL: https://nordvpn.com/blog/buffer-overflow-attack/
+
+Misleading article statement:
+"Buffer overflow is the most common of DDoS attacks. It happens when the input data goes over the memory allocated for the buffer and overwrites data into the other areas of the program not designed to store it. I
+f there is too much data headed into the buffer, your program might slow down or crash, or you might see incorrect results or memory access errors. It also allows hackers to exploit vulnerabilities and perform buffer overflow attacks."
+
+
+
+Revision:
+A buffer overflow attack occurs when an attacker sends more data to a buffer than it can handle, which can overwrite adjacent memory and potentially lead to code execution or system crashes. 
+This type of vulnerability is typically used to exploit software flaws and may lead to service disruptions or unauthorized access, but it is not traditionally classified as a DDoS (Distributed Denial of Service) attack.
+
+On the other hand, DDoS attacks typically involve overwhelming a system or network with a large volume of traffic, often from multiple sources, to cause a service outage or disruption. 
+While a buffer overflow can lead to a Denial of Service (DoS) in some situations, it is distinct from the high-traffic flood methods commonly associated with DDoS.
+
+Suggestion:
+It would be helpful to revise the article to specify that buffer overflow attacks can cause Denial of Service in some cases, but they are not generally considered DDoS attacks in the classic sense.
+DDoS attacks typically involve massive traffic volumes rather than exploiting memory vulnerabilities. I believe this adjustment would help avoid confusion, particularly for individuals new to cybersecurity.
+
+Thank you for considering this feedback. I look forward to seeing continued great work from NordVPN and appreciate your commitment to security.
+
+Very Respectfully,
+Sebastian (cybercossack)
+
