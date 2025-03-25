@@ -1,0 +1,11 @@
+XSS:
+Injected an XSS payload using Markdown syntax into the image page. This successfully triggered the script execution and resulted in a flag.
+
+SQL Injection:
+Injected a single quote (') into the link on the page, which caused a vulnerability that allowed the execution of arbitrary SQL commands. This injection returned a flag.
+
+IDOR (Insecure Direct Object Reference) Description:
+Created a new page that generated the URL /page/edit/11. Then, by modifying the URL to /page/edit/7, I was able to access and manipulate a page that I shouldn't have had access to, retrieving a flag.
+
+Inline XSS:
+Injected an XSS payload into a button on the testing page. This successfully triggered the script execution and returned a flag
