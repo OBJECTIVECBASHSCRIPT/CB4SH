@@ -1,11 +1,83 @@
-XSS:
-Injected an XSS payload using Markdown syntax into the image page. This successfully triggered the script execution and resulted in a flag.
+Challenge: XSS Markdown Flag
 
-SQL Injection:
-Injected a single quote (') into the link on the page, which caused a vulnerability that allowed the execution of arbitrary SQL commands. This injection returned a flag.
+Vulnerability Type: Cross-Site Scripting (XSS) via Markdown
 
-IDOR (Insecure Direct Object Reference) Description:
-Created a new page that generated the URL /page/edit/11. Then, by modifying the URL to /page/edit/7, I was able to access and manipulate a page that I shouldn't have had access to, retrieving a flag.
+Steps:
 
-Inline XSS:
-Injected an XSS payload into a button on the testing page. This successfully triggered the script execution and returned a flag
+    Accessed the image page on the platform.
+
+    Injected a malicious XSS payload using Markdown syntax into the input field.
+
+    Submitted the form and observed the script execution on the page.
+
+    The payload triggered, and the flag was captured.
+
+Takeaway:
+
+    Always test user inputs for XSS vulnerabilities.
+
+    Markdown syntax can sometimes be abused for XSS payloads in web applications.
+
+    XSS vulnerabilities can often lead to the execution of arbitrary scripts, potentially compromising user sessions.
+
+Challenge: SQL Injection Flag
+
+Vulnerability Type: SQL Injection
+
+Steps:
+
+    Identified a user-controlled input field in the URL.
+
+    Injected a single quote (') into the link to test for SQL injection vulnerability.
+
+    The injection caused an SQL error, and the flag was returned.
+
+Takeaway:
+
+    Always sanitize user inputs to prevent SQL injection vulnerabilities.
+
+    SQL injection can be used to manipulate database queries and retrieve sensitive information.
+
+    Proper input validation and parameterized queries can prevent SQL injection attacks.
+
+Challenge: IDOR Flag
+
+Vulnerability Type: Insecure Direct Object Reference (IDOR)
+
+Steps:
+
+    Created a new page, which generated the URL /page/edit/11.
+
+    Modified the URL to /page/edit/7 to access a different page.
+
+    Navigated to the new URL, and a flag was returned.
+
+Takeaway:
+
+    Always verify user access rights before allowing access to sensitive resources.
+
+    Insecure Direct Object References can expose objects that should be restricted to authorized users.
+
+    Proper access control checks and unique identifiers for each user can mitigate this vulnerability.
+
+Challenge: Inline XSS Flag
+
+Vulnerability Type: Cross-Site Scripting (XSS) - Inline
+
+Steps:
+
+    Accessed the testing page on the platform.
+
+    Injected an XSS payload into a button input.
+
+    Triggered the payload by interacting with the button.
+
+    The XSS executed and returned a flag.
+
+Takeaway:
+
+    Always validate and sanitize user input, especially in interactive elements like buttons.
+
+    XSS vulnerabilities can be introduced via inputs in forms, buttons, or other interactive elements.
+
+    In real-world bug bounty hunting, look for XSS in non-obvious locations like buttons, images, and embedded objects.
