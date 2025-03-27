@@ -3,7 +3,7 @@ import itertools
 from time import sleep
 
 # Configuration
-TARGET_URL = "https://example.com/api"
+TARGET_URL = "https://example.com/api" #Insert URL containing API endpoints here.
 HEADERS = {'Authorization': 'Bearer YOUR_TOKEN'}
 USER_PAYLOADS = ['admin', 'manager', 'developer']
 ORDER_PAYLOADS = ['order123', 'order456', 'order789']
