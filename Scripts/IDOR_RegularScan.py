@@ -1,7 +1,6 @@
 import requests
 
-# Configuration
-TARGET_URL = "https://example.com/api"
+TARGET_URL = "https://example.com/api" #Insert URL containing API endpoints here.
 HEADERS = {'Authorization': 'Bearer YOUR_TOKEN'}
 COMMON_PAYLOADS = ['user1', 'user2', 'guest', 'admin']
 ORDER_PAYLOADS = ['order123', 'order456']
