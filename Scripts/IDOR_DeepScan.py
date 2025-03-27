@@ -2,7 +2,7 @@ import requests
 import json
 
 # Configuration
-TARGET_URL = "https://example.com/api"
+TARGET_URL = "https://example.com/api" #Insert URL containing API endpoints here.
 HEADERS = {'Authorization': 'Bearer YOUR_TOKEN'}
 USER_IDS = ['1', '2', '3', '9999', '10000']
 ORDER_IDS = ['123', '234', '345', '9999']
