@@ -39,3 +39,4 @@ Date & Context: When and how this milestone was achieved.
 
 Thank you for exploring this collection of my work. If you have any questions or feedback, feel free to reach out!
 
+!!! This is an LLM-generated template !!!
