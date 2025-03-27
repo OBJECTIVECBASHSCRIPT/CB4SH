@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cb4sh's odyssey</title>
+    <style>
+      /* Inlined CSS */
+      #rainbow-text {
+        font-size: 3em;
+        text-align: center;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="rainbow-text">cb4sh's hacking conquest: security research, ctf, and bounty hunting.</h1>
+    <p>My odyssey as I conquer the realm of cybersecurity</p>
+
+    <script>
+      // Inlined JavaScript
+      const rainbowText = document.getElementById('rainbow-text');
+
+      function changeColor() {
+        const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#8B00FF'];
+        let i = 0;
+
+        setInterval(() => {
+          rainbowText.style.color = colors[i];
+          i = (i + 1) % colors.length;
+        }, 300);
+      }
+
+      changeColor();
+    </script>
+  </body>
+</html>
