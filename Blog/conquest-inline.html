@@ -14,94 +14,94 @@
     <!-- End of Browser Icon -->
 
     <!-- Start of Website Browser Title -->
-    <title>Conquest</title>
-    <!-- End of Website Browser Title --> 
-   
-    <!-- Start of Stylesheet --> 
-    <style>
-    #rainbow-text {
-        font-size: 3em;
-        text-align: center;
-        margin-top: 50px;
-      }
+<title>Conquest</title>
+<!-- End of Website Browser Title -->
 
-    body {
-        background-color: #121212;
-        color: #e0e0e0;
-        font-family: Arial, sans-serif; 
-      }
-   </style>
-   <!-- End of Stylesheet -->
+<!-- Start of Stylesheet --> 
+<style>
+#rainbow-text {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 50px;
+}
 
-    
-   </head>
-  <!-- End of Head Element -->
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+}
+</style>
+<!-- End of Stylesheet -->
 
- <!-- Start of Body Element --> 
-    <body>
-    
-    <!-- Start of Main Page Header -->
-    <h1 id="rainbow-text">Conquest</h1>
-    <!-- End of Main Page Header --> 
+</head>
+<!-- End of Head Element -->
 
-    <!-- Start of Navigation Bar Code --> 
-    <nav>
-        <ul>
-            <li> <a href="#" onclick="showPage('Home')">Home</a> </li>
-            <li> <a href="#" onclick="showPage('wargames')">War Games</a> </li>
-            <li><a href="#" onclick="showPage('projects')">Projects</a> </li>
-            <li> <a href="#" onclick="showPage('bounties')">Bounties</a> </li>
-            <li> <a href="#" onclick="showPage('info')">Info</a> </li>
-        </ul>
-    </nav>
-  <!-- End of Navigation Bar Code -->
+<!-- Start of Body Element --> 
+<body>
 
-    <!-- Start of Sections Element --> 
-      <section id="home" class="page">
-        <h1>Welcome to Kozak</h1>
-        <p>Documenting my security research experience with CTFs, HackerOne, LLM creation, and more! </p>
-      </section>
+<!-- Start of Main Page Header -->
+<h1 id="rainbow-text">Conquest</h1>
+<!-- End of Main Page Header -->
 
-      <section id="wargames" class="page" style="display: none;">
-        <h1>War Games</h1>
-        <p>Capture the Flag & Security Research Exercises</p>
-      </section>
+<!-- Start of Navigation Bar Code --> 
+<nav>
+    <ul>
+        <li><a href="#" onclick="showPage('Home')">Home</a></li>
+        <li><a href="#" onclick="showPage('wargames')">War Games</a></li>
+        <li><a href="#" onclick="showPage('projects')">Projects</a></li>
+        <li><a href="#" onclick="showPage('bounties')">Bounties</a></li>
+        <li><a href="#" onclick="showPage('info')">Info</a></li>
+    </ul>
+</nav>
+<!-- End of Navigation Bar Code -->
 
-      <section id="projects" class="page" style="display: none;"> 
-      <h1>Projects</h1>
-      <p>All of my projects including but not limited to: Penetration Testing Scripts, LLM creation, and Art. </p>
-      </section>
+<!-- Start of Sections Element -->
+<section id="home" class="page">
+    <h1>Welcome to Kozak</h1>
+    <p>Documenting my security research experience with CTFs, HackerOne, LLM creation, and more!</p>
+</section>
 
-      <section id="bounties" class="page" style="display: none;"> 
-        <h1>Bug Bounties</h1
-        <p>My HackerOne work: BBP, VDPs, and more! </p>
-      </section>
+<section id="wargames" class="page" style="display: none;">
+    <h1>War Games</h1>
+    <p>Capture the Flag & Security Research Exercises</p>
+</section>
 
-      <section id="info" class="page" style="display: none;">
-        <h1>Info</h1>
-        <p>Bio, Contact, and Vision</p>
-      </section>
-    <!-- End of Section Element --> 
-      
-    <!-- Start of Javascript --> 
-    <script>
-    const rainbowText = document.getElementById('rainbow-text');
+<section id="projects" class="page" style="display: none;"> 
+    <h1>Projects</h1>
+    <p>All of my projects including but not limited to: Penetration Testing Scripts, LLM creation, and Art.</p>
+</section>
 
-    function changeColor() {
+<section id="bounties" class="page" style="display: none;"> 
+    <h1>Bug Bounties</h1>
+    <p>My HackerOne work: BBP, VDPs, and more!</p>
+</section>
+
+<section id="info" class="page" style="display: none;">
+    <h1>Info</h1>
+    <p>Bio, Contact, and Vision</p>
+</section>
+<!-- End of Section Element -->
+
+<!-- Start of Javascript -->
+<script>
+const rainbowText = document.getElementById('rainbow-text');
+
+function changeColor() {
     const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#8B00FF'];
     let i = 0;
 
     setInterval(() => {
-          rainbowText.style.color = colors[i];
-          i = (i + 1) % colors.length;
-        }, 300);
-      }
+        rainbowText.style.color = colors[i];
+        i = (i + 1) % colors.length;
+    }, 300);
+}
 
-    changeColor();
-    </script>
-    <!-- End of Javascript -->> 
-    
-  </body>
-    <!-- End of Body Element --> 
-    
+changeColor();
+</script>
+<!-- End of Javascript -->
+
+</body>
+<!-- End of Body Element -->
+
 </html>
+
