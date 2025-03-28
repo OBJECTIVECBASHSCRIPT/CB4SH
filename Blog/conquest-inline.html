@@ -19,80 +19,80 @@
 
 <!-- Start of Stylesheet --> 
 <style>
-/* Styling for the rainbow text */
-#rainbow-text {
-    font-size: 3em;
-    text-align: center;
-    margin-top: 50px;
-}
-
-/* General body styling */
-body {
-    background-color: #121212;
-    color: #1edf1e;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Navigation bar styling */
-nav {
-    background-color: #121212;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #1edf1e; 
-    text-decoration: none;
-    font-size: 1.2em;
-    padding: 10px 15px;
-    transition: background-color 0.3s ease;
-}
-
-/* Hover effect for navigation links */
-nav ul li a:hover {
-    background-color: #333; 
-    border-radius: 5px;
-}
-
-/* Styling for the page sections */
-.page {
-    display: none;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-}
-
-/* Styling for active page */
-.page.active {
-    display: block;
-}
-
-/* Styling for the <p> text within sections */
-.page p {
-    color: #1edf1e; /* Changed text color to #1edf1e */
-}
-
-/* Small responsive styling for mobile view */
-@media (max-width: 600px) {
-    nav ul li {
-        display: block;
-        margin-bottom: 10px;
+    /* Styling for the rainbow text */
+    #rainbow-text {
+        font-size: 3em;
+        text-align: center;
+        margin-top: 50px;
     }
-}
+
+    /* General body styling */
+    body {
+        background-color: #121212;
+        color: #1edf1e;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Navigation bar styling */
+    nav {
+        background-color: #121212;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    nav ul li a {
+        color: #1edf1e; 
+        text-decoration: none;
+        font-size: 1.2em;
+        padding: 10px 15px;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Hover effect for navigation links */
+    nav ul li a:hover {
+        background-color: #333; 
+        border-radius: 5px;
+    }
+
+    /* Styling for the page sections */
+    .page {
+        display: none;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+
+    /* Styling for active page */
+    .page.active {
+        display: block;
+    }
+
+    /* Styling for the <p> text within sections */
+    .page p {
+        color: #1edf1e;
+    }
+
+    /* Small responsive styling for mobile view */
+    @media (max-width: 600px) {
+        nav ul li {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
 </style>
 <!-- End of Stylesheet -->
 
@@ -102,86 +102,87 @@ nav ul li a:hover {
 <!-- Start of Body Element --> 
 <body>
 
-<!-- Start of Main Page Header -->
-<h1 id="rainbow-text">Conquest</h1>
-<!-- End of Main Page Header -->
+    <!-- Start of Main Page Header -->
+    <h1 id="rainbow-text">Conquest</h1>
+    <!-- End of Main Page Header -->
 
-<!-- Start of Navigation Bar Code --> 
-<nav>
-    <ul>
-        <li><a href="#" onclick="showPage('home')">Home</a></li>
-        <li><a href="#" onclick="showPage('wargames')">War Games</a></li>
-        <li><a href="#" onclick="showPage('projects')">Projects</a></li>
-        <li><a href="#" onclick="showPage('bounties')">Bounties</a></li>
-        <li><a href="#" onclick="showPage('info')">Info</a></li>
-    </ul>
-</nav>
-<!-- End of Navigation Bar Code -->
+    <!-- Start of Navigation Bar Code --> 
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('wargames')">War Games</a></li>
+            <li><a href="#" onclick="showPage('projects')">Projects</a></li>
+            <li><a href="#" onclick="showPage('bounties')">Bounties</a></li>
+            <li><a href="#" onclick="showPage('info')">Info</a></li>
+        </ul>
+    </nav>
+    <!-- End of Navigation Bar Code -->
 
-<!-- Start of Sections Element -->
-<section id="home" class="page active">
-    <h1>Welcome to Kozak</h1>
-    <p>Documenting my security research experience with CTFs, HackerOne, LLM creation, and more!</p>
-</section>
+    <!-- Start of Sections Element -->
+    <section id="home" class="page active">
+        <h1>Welcome to Kozak</h1>
+        <p>Documenting my security research experience with CTFs, HackerOne, LLM creation, and more!</p>
+    </section>
 
-<section id="wargames" class="page">
-    <h1>War Games</h1>
-    <p>Capture the Flag & Security Research Exercises</p>
-</section>
+    <section id="wargames" class="page">
+        <h1>War Games</h1>
+        <p>Capture the Flag & Security Research Exercises</p>
+    </section>
 
-<section id="projects" class="page"> 
-    <h1>Projects</h1>
-    <p>All of my projects including but not limited to: Penetration Testing Scripts, LLM creation, and Art.</p>
-</section>
+    <section id="projects" class="page"> 
+        <h1>Projects</h1>
+        <p>All of my projects including but not limited to: Penetration Testing Scripts, LLM creation, and Art.</p>
+    </section>
 
-<section id="bounties" class="page"> 
-    <h1>Bug Bounties</h1>
-    <p>My HackerOne work: BBP, VDPs, and more!</p>
-</section>
+    <section id="bounties" class="page"> 
+        <h1>Bug Bounties</h1>
+        <p>My HackerOne work: BBP, VDPs, and more!</p>
+    </section>
 
-<section id="info" class="page">
-    <h1>Info</h1>
-    <p>Bio, Contact, and Vision</p>
-</section>
-<!-- End of Section Element -->
+    <section id="info" class="page">
+        <h1>Info</h1>
+        <p>Bio, Contact, and Vision</p>
+    </section>
+    <!-- End of Section Element -->
 
-<!-- Start of Javascript -->
-<script>
-// Function to change the color of the header text
-const rainbowText = document.getElementById('rainbow-text');
+    <!-- Start of Javascript -->
+    <script>
+        // Function to change the color of the header text
+        const rainbowText = document.getElementById('rainbow-text');
 
-function changeColor() {
-    const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#8B00FF'];
-    let i = 0;
+        function changeColor() {
+            const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#8B00FF'];
+            let i = 0;
 
-    setInterval(() => {
-        rainbowText.style.color = colors[i];
-        i = (i + 1) % colors.length;
-    }, 300);
-}
+            setInterval(() => {
+                rainbowText.style.color = colors[i];
+                i = (i + 1) % colors.length;
+            }, 300);
+        }
 
-changeColor();
+        changeColor();
 
-// Function to show the selected page section
-function showPage(pageId) {
-    // Hide all sections
-    const sections = document.querySelectorAll('.page');
-    sections.forEach(section => {
-        section.classList.remove('active');
-    });
+        // Function to show the selected page section
+        function showPage(pageId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.page');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
 
-    // Show the selected page section
-    const page = document.getElementById(pageId);
-    if (page) {
-        page.classList.add('active');
-    }
-}
-</script>
-<!-- End of Javascript -->
+            // Show the selected page section
+            const page = document.getElementById(pageId);
+            if (page) {
+                page.classList.add('active');
+            }
+        }
+    </script>
+    <!-- End of Javascript -->
 
 </body>
 <!-- End of Body Element -->
 
 </html>
+
 
 
