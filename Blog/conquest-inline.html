@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8jC7JAAAAmklEQVRIDbXBAQEAAAABIP6PzgpVJp5y/c8D//Pzi3IN5yD/e3SOJc4ybt3dm2Jc49m0TeW+m3pe/qZ3uf+q2AABv7fUbHkljzogtq1q5Kg5ayz33j8AAACkgk1R2v6AA3A0CyzwhqVo7hcgHsCkqD5Zy6pgnwCjlq7J0Xkj9rrXJ9pzrrrwrZZ8O5l8jwo9ilZmkECaOgtzcPpxq4g6c8nKB0wDgf0vgtKgtfEX+VTSz7TYF/xh6SKgQX8lEjEYfuD5vcJcegMc9KM5eCGgwYGggKK9AGoAaYNOaMDweGhALyyhy+gkLdkY2LAA0+zZHXp2z9Wlz8zDTpYr6ZCpLPbXrmKjDgI/avjX9A7/d9TwJ0B7yZQgxPb++U65RzJ4ZQsddk08wNVN3gafmj6O4XhzHl+BCtnQow5P9lm6zndpRAtOekvs=">
     <!-- End of Browser Icon -->
 
-    <!-- Start of Website Browser Title -->
+<!-- Start of Website Browser Title -->
 <title>Conquest</title>
 <!-- End of Website Browser Title -->
 
@@ -29,6 +29,10 @@ body {
     background-color: #121212;
     color: #e0e0e0;
     font-family: Arial, sans-serif;
+}
+
+.page {
+    display: none;
 }
 </style>
 <!-- End of Stylesheet -->
@@ -46,7 +50,7 @@ body {
 <!-- Start of Navigation Bar Code --> 
 <nav>
     <ul>
-        <li><a href="#" onclick="showPage('Home')">Home</a></li>
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
         <li><a href="#" onclick="showPage('wargames')">War Games</a></li>
         <li><a href="#" onclick="showPage('projects')">Projects</a></li>
         <li><a href="#" onclick="showPage('bounties')">Bounties</a></li>
@@ -56,27 +60,27 @@ body {
 <!-- End of Navigation Bar Code -->
 
 <!-- Start of Sections Element -->
-<section id="home" class="page">
+<section id="home" class="page" style="display: block;">
     <h1>Welcome to Kozak</h1>
     <p>Documenting my security research experience with CTFs, HackerOne, LLM creation, and more!</p>
 </section>
 
-<section id="wargames" class="page" style="display: none;">
+<section id="wargames" class="page">
     <h1>War Games</h1>
     <p>Capture the Flag & Security Research Exercises</p>
 </section>
 
-<section id="projects" class="page" style="display: none;"> 
+<section id="projects" class="page"> 
     <h1>Projects</h1>
     <p>All of my projects including but not limited to: Penetration Testing Scripts, LLM creation, and Art.</p>
 </section>
 
-<section id="bounties" class="page" style="display: none;"> 
+<section id="bounties" class="page"> 
     <h1>Bug Bounties</h1>
     <p>My HackerOne work: BBP, VDPs, and more!</p>
 </section>
 
-<section id="info" class="page" style="display: none;">
+<section id="info" class="page">
     <h1>Info</h1>
     <p>Bio, Contact, and Vision</p>
 </section>
@@ -97,6 +101,21 @@ function changeColor() {
 }
 
 changeColor();
+
+// Function to show the correct page section
+function showPage(pageId) {
+    // Hide all sections
+    const sections = document.querySelectorAll('.page');
+    sections.forEach(section => {
+        section.style.display = 'none';
+    });
+
+    // Show the selected page section
+    const page = document.getElementById(pageId);
+    if (page) {
+        page.style.display = 'block';
+    }
+}
 </script>
 <!-- End of Javascript -->
 
@@ -104,4 +123,5 @@ changeColor();
 <!-- End of Body Element -->
 
 </html>
+
 
