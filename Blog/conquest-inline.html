@@ -19,20 +19,75 @@
 
 <!-- Start of Stylesheet --> 
 <style>
+/* Styling for the rainbow text */
 #rainbow-text {
     font-size: 3em;
     text-align: center;
     margin-top: 50px;
 }
 
+/* General body styling */
 body {
     background-color: #121212;
     color: #e0e0e0;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+/* Navigation bar styling */
+nav {
+    background-color: #121212; /* Same as the body background to blend in */
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #1edf1e; /* Title color */
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for navigation links */
+nav ul li a:hover {
+    background-color: #333; /* Dark background on hover */
+    border-radius: 5px;
+}
+
+/* Styling for the page sections */
 .page {
     display: none;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+}
+
+/* Styling for active page */
+.page.active {
+    display: block;
+}
+
+/* Small responsive styling for mobile view */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
 }
 </style>
 <!-- End of Stylesheet -->
@@ -60,7 +115,7 @@ body {
 <!-- End of Navigation Bar Code -->
 
 <!-- Start of Sections Element -->
-<section id="home" class="page" style="display: block;">
+<section id="home" class="page active">
     <h1>Welcome to Kozak</h1>
     <p>Documenting my security research experience with CTFs, HackerOne, LLM creation, and more!</p>
 </section>
@@ -88,6 +143,7 @@ body {
 
 <!-- Start of Javascript -->
 <script>
+// Function to change the color of the header text
 const rainbowText = document.getElementById('rainbow-text');
 
 function changeColor() {
@@ -102,18 +158,18 @@ function changeColor() {
 
 changeColor();
 
-// Function to show the correct page section
+// Function to show the selected page section
 function showPage(pageId) {
     // Hide all sections
     const sections = document.querySelectorAll('.page');
     sections.forEach(section => {
-        section.style.display = 'none';
+        section.classList.remove('active');
     });
 
     // Show the selected page section
     const page = document.getElementById(pageId);
     if (page) {
-        page.style.display = 'block';
+        page.classList.add('active');
     }
 }
 </script>
