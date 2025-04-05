@@ -1,9 +1,14 @@
-I've had this machine for less than a year. Within the time that I had it, I've experienced multiple issues. For one, the product spontaneously terminates the Asus Precision Trackpad functionality. 
-I have troubleshooted the issue and as of yet, the only thing that reactivates it, is a soft reboot. Additionally, the Windows 11 native OS is buggy. 
-This is not a primary concern of mine as I use the machine for my security research work and I use the VM anyway, however for those who use the machine to game, this could definitely be problematic.
-For clarification purposes, the machine's display screen on Windows 11 taskbar flickers displaying multiple taskbars on the screen. The machine is also prone to overheating even when in eco mode. 
+I've had this machine for less than a year. Within the time that I had it, I've experienced multiple issues. 
+For one, the product spontaneously terminates the Asus Precision Trackpad functionality. 
+I have troubleshooted the issue and as of yet, the only thing that reactivates it, is a soft reboot.
+Additionally, the Windows 11 native OS is buggy. 
+This is not a primary concern of mine as I use the machine for my security research work and I use the VM anyway, 
+however for those who use the machine to game, this could definitely be problematic.
+For clarification purposes, the machine's display screen on Windows 11 taskbar flickers displaying multiple taskbars on the screen.
+The machine is also prone to overheating even when in eco mode. 
 I've troubleshooted both issues and thus far, the only band-aid fix has been to hard reboot from BIOS. 
-Thankfully, none of these issues besides the touchpad dying exist on the VM, so I assume this is an issue with the method in which the native Windows 11 OS is configured. 
+Thankfully, none of these issues besides the touchpad dying exist on the VM, 
+so I assume this is an issue with the method in which the native Windows 11 OS is configured. 
 The touchpad issue also can be perma-fixed by using an external mouse with the computer. Overall, this is a powerful yet unstable machine.
 I bought the G15 in 2022 and the performance otherwise was great, but the same issues existed. It would frequently overheat and blue screen.
 I would not recommend the ASUS ROG machines.
