@@ -1,0 +1,177 @@
+─(kali㉿kali)-[~]
+└─$ cd blockchain
+
+┌──(kali㉿kali)-[~/blockchain]
+└─$ ls
+monero
+
+┌──(kali㉿kali)-[~/blockchain]
+└─$ cd monero
+
+┌──(kali㉿kali)-[~/blockchain/monero]
+└─$ ls
+agave  monero
+
+┌──(kali㉿kali)-[~/blockchain/monero]
+└─$ cd agave
+
+┌──(kali㉿kali)-[~/blockchain/monero/agave]
+└─$ ls
+accounts-cluster-bench        cargo                   cli               define-syscall      genesis-utils            LICENSE            net                poseidon           rpc                     sdk                       svm-transaction     tpu-client-next                  upload-perf
+accounts-db                   cargo-build-sbf         cli-config        docs                geyser-plugin-interface  local-cluster      net-shaper         program-runtime    rpc-client              SECURITY.md               system-test         transaction-dos                  validator
+banking-bench                 Cargo.lock              client            dos                 geyser-plugin-manager    log-analyzer       net-utils          programs           rpc-client-api          send-transaction-service  target              transaction-metrics-tracker      vercel.json
+banks-client                  cargo-registry          client-test       download-utils      gossip                   log-collector      nextest.toml       program-test       rpc-client-nonce-utils  short-vec                 test-abi.sh         transaction-status               version
+banks-interface               cargo-test-sbf          cli-output        entry               index.js                 logger             node_modules       pubsub-client      rpc-test                stake-accounts            test-ledger         transaction-status-client-types  vote
+banks-server                  Cargo.toml              compute-budget    faucet              inline-spl               measure            notifier           quic-client        run.sh                  storage-bigtable          test-validator      transaction-view                 watchtower
+bench-streamer                cd                      connection-cache  fee                 install                  memory-management  package.json       rayon-threadlimit  runtime                 storage-proto             thin-client         turbine                          web3.js                               
+bench-tps                     CHANGELOG.md            CONTRIBUTING.md   fetch-perf-libs.sh  keygen                   merkle-root-bench  package-lock.json  rbpf-cli           runtime-transaction     streamer                  timings             type-overrides                   wen-restart                           
+                                                                                                                                                                                                                                                                                                                           
+┌──(kali㉿kali)-[~/blockchain/monero/agave]                                                                                                                                                                                                                                                                                
+└─$ node index.js
+/home/kali/blockchain/monero/agave/index.js:8                                                                                                               
+const wallet = solanaWeb3.Keypair.fromSecretKey(secretkey);                                                                                                 
+                                                ^                                                                                                           
+                                                                                                                                                            
+ReferenceError: secretkey is not defined                                                                                                                    
+    at Object.<anonymous> (/home/kali/blockchain/monero/agave/index.js:8:49)                                                                                
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)                                                                                           
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)                                                                                    
+    at Module.load (node:internal/modules/cjs/loader:1275:32)                                                                                               
+    at Module._load (node:internal/modules/cjs/loader:1096:12)                                                                                              
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)                                                                  
+    at node:internal/main/run_main_module:28:49                                                                                                             
+                                                                                                                                                            
+Node.js v20.19.0                                                                                                                                            
+                                                                                                                                                            
+┌──(kali㉿kali)-[~/blockchain/monero/agave]                                                                                                                 
+└─$ solana-keygen new --outfile ~/my_wallet.json
+Generating a new keypair                                                                                                                                    
+                                                                                                                                                            
+For added security, enter a BIP39 passphrase                                                                                                                
+                                                                                                                                                            
+NOTE! This passphrase improves security of the recovery seed phrase NOT the                                                                                 
+keypair file itself, which is stored as insecure plain text                                                                                                 
+                                                                                                                                                            
+BIP39 Passphrase (empty for none):                                                                                                                          
+Enter same passphrase again:                                                                                                                                
+                                                                                                                                                            
+Wrote new keypair to /home/kali/my_wallet.json                                                                                                              
+===========================================================================                                                                                 
+pubkey: #####################################################################                                                                                                      
+===========================================================================                                                                                 
+Save this seed phrase and your BIP39 passphrase to recover your new keypair:                                                                                
+exhibit near grunt beauty age nature produce camp extend injury brown again                                                                                 
+===========================================================================                                                                                 
+                                                                                                                                                            
+┌──(kali㉿kali)-[~/blockchain/monero/agave]                                                                                                                 
+└─$ cat ~/my_wallet.json                                                                                                                                    
+[##############################################################################################,]
+┌──(kali㉿kali)-[~/blockchain/monero/agave]                                                                                                                 
+└─$ node index.js                                                                                                                                           
+/home/kali/blockchain/monero/agave/index.js:7                                                                                                               
+const secretKey = Uint8Array.from(                                                                                                                          
+      ^
+
+SyntaxError: Identifier 'secretKey' has already been declared
+    at wrapSafe (node:internal/modules/cjs/loader:1472:18)
+    at Module._compile (node:internal/modules/cjs/loader:1501:20)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.19.0
+
+┌──(kali㉿kali)-[~/blockchain/monero/agave]
+└─$ [
+ ###############################################################
+################################################################
+]
+bash: [: missing `]'
+##########################################################################################################: command not found
+##########################################################################################################: command not found
+]: command not found
+
+┌──(kali㉿kali)-[~/blockchain/monero/agave]
+└─$ node index.j
+node:internal/modules/cjs/loader:1215
+  throw err;
+  ^
+
+Error: Cannot find module '/home/kali/blockchain/monero/agave/index.j'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.19.0
+
+┌──(kali㉿kali)-[~/blockchain/monero/agave]
+└─$ node index.js
+#####################################################
+Wallet balance: 0 SOL
+/home/kali/blockchain/monero/agave/node_modules/@solana/web3.js/lib/index.cjs.js:6175
+          throw new TransactionExpiredBlockheightExceededError(rawSignature);
+                ^
+
+TransactionExpiredBlockheightExceededError: Signature ######################################################################## has expired: block height exceeded.
+    at Connection.confirmTransaction (/home/kali/blockchain/monero/agave/node_modules/@solana/web3.js/lib/index.cjs.js:6175:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async airdrop (/home/kali/blockchain/monero/agave/index.js:30:9) {
+  signature: '################################################################'
+}
+
+Node.js v20.19.0
+
+┌──(kali㉿kali)-[~/blockchain/monero/agave]
+└─$ node index.js                                                                                                                                                                                                                                                                                                           
+/home/kali/blockchain/monero/agave/index.js:36
+        },
+        ^
+
+SyntaxError: Unexpected token '}'
+    at wrapSafe (node:internal/modules/cjs/loader:1472:18)
+    at Module._compile (node:internal/modules/cjs/loader:1501:20)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.19.0
+
+┌──(kali㉿kali)-[~/blockchain/monero/agave]
+└─$ node index1.js                                                                                                                                                                                                                                                                                                          
+/home/kali/blockchain/monero/agave/index1.js:31
+const solanaWeb3 = require('@solana/web3.js');
+^^^^^
+
+SyntaxError: Unexpected token 'const'
+    at wrapSafe (node:internal/modules/cjs/loader:1472:18)
+    at Module._compile (node:internal/modules/cjs/loader:1501:20)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.19.0
+
+┌──(kali㉿kali)-[~/blockchain/monero/agave]
+└─$ node index1.js
+ Public Key: ###############################################################
+Server responded with 429 Too Many Requests.  Retrying after 500ms delay...
+Server responded with 429 Too Many Requests.  Retrying after 1000ms delay...
+Server responded with 429 Too Many Requests.  Retrying after 2000ms delay...
+Server responded with 429 Too Many Requests.  Retrying after 4000ms delay...
+ Airdrop successful! Signature: #########################################
+ Wallet Balance: 4 SOL
+
+┌──(kali㉿kali)-[~/blockchain/monero/agave]
+└─$                                                                                                                                                                                                                                                                                                                         
+
+┌──(kali㉿kali)-[~/blockchain/monero/agave]
