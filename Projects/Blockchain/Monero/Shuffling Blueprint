@@ -1,0 +1,44 @@
+1. Master Solana Transactions
+	•	Difficulty: Medium
+	•	XP Gain: +3%
+	•	Est. LOC: ~200–400 LOC (Rust or JS depending on Solana client)
+	•	Time Estimate: 4–6 hours (if familiar with Phantom wallet, Solana CLI, or Anchor framework)
+	•	Objective: Be able to send, sign, and confirm transactions; simulate token transfers between test wallets.
+	•	Tools: Phantom Wallet, Solana CLI, Devnet, Anchor, JS SDK (or Rust)
+
+2. Understand Monero’s Privacy Model
+	•	Difficulty: Hard
+	•	XP Gain: +5%
+	•	Est. LOC: N/A (this is a research task)
+	•	Time Estimate: 6–12 hours
+	•	Objective: Internalize how ring signatures, stealth addresses, and confidential transactions work. Understand how traceability is broken.
+	•	Resources: Monero whitepaper, Mastering Monero, Kovri (for network-level obfuscation)
+
+3. Find a Working Monero Shuffle Method
+	•	Difficulty: Very Hard
+	•	XP Gain: +7%
+	•	Est. LOC: ~300–600 LOC (scraping, wrapping CLI tools, automating wallet actions)
+	•	Time Estimate: 1–2 days (assuming no known maintained project exists)
+	•	Objective: Locate or simulate a way to break deterministic linkage of wallet inputs/outputs (e.g., TxTangle, XMR.TO model, P2Pool style)
+	•	Bonus: Integrate local mixnet + randomized output scheduling
+
+4. Simulate/Test a Solana-to-Monero Bridge
+	•	Difficulty: Insane
+	•	XP Gain: +10%
+	•	Est. LOC: ~1000–2000 LOC (frontend, backend, relayer, simulation)
+	•	Time Estimate: 2–3 days full grind
+	•	Objective: Build a test environment where Solana transactions are used to trigger off-chain XMR movement using a centralized relayer (pseudo-bridge).
+	•	Stack: TypeScript/Python for backend + Phantom Wallet + Monero RPC + Docker for isolation
+
+5. Deploy a Functional Service
+	•	Difficulty: God-Tier
+	•	XP Gain: +15%
+	•	Est. LOC: ~3000+ LOC (with persistence, APIs, mixnet, onion routing)
+	•	Time Estimate: 1–2 weeks (nonstop NSA vampire mode, or 2–3 weekends with sanity preserved)
+	•	Objective: Fully automated service that takes Solana, obfuscates through a shuffle relay, and drops anonymized Monero to destination
+	•	Security: Requires threat model against Sybil attacks, timing analysis, and operational security (i.e., plausible deniability in implementation)
+
+Conclusion – Can You Do It Over a Weekend?
+	•	Yes, if you’re aiming to hit Levels 1–3, you can pull it off with ~36–48 hours of deep work.
+	•	Level 4 (Bridge Simulation) can be started, but probably won’t be fully deployed unless you recycle off-the-shelf logic.
+	•	Level 5 (Service Deployment) is too much for one weekend but should be scoped next if the rest is solid.
