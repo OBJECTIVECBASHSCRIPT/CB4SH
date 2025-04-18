@@ -4,7 +4,6 @@ Summary: Gemini sends unprompted lyrics mitigated by file injection.
 
 Program: Google VRP
 
-URL: https://gemini.google.com/app/52007318a78c97ac?hl=en-IN
 
 Vulnerability type: File Inclusion
 Details
