@@ -41,7 +41,7 @@ async function airdrop() {
     console.log(' Airdrop successful! Signature:', airdropSignature);
 }
 
-// 🧠 Main execution logic
+
 async function main() {
     await airdrop();
     await getBalance();
