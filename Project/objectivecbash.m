@@ -1,5 +1,9 @@
-#import <Foundation/Foundation.h>
+#import <stdio.h>
 
-//Simple Objective-C print statement that prints my hacker handle
+//Simple Objective-C statement that prints my hacker handle
 
-int main() {NSLog(@"OBJECTIVECBASH"); return 0;}
+int main() {
+    printf("OBJECTIVECBASHSCRIPT\n");
+   
+   return 0;
+}
