@@ -2,7 +2,7 @@ use monero::{PrivateKey, PublicKey, Address};
 use rand::rngs::OsRng;
 
 fn main() {
-   // Monero Automation Logic
+   // Monero Logic:
    let spend_key = PrivateKey::generate(&mut OsRng);
    let view_key = PrivateKey::generate(&mut OsRng);
 
