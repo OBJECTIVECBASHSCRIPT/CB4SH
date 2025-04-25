@@ -1,203 +1,1734 @@
-  <!-- Start of HTML file configuration -->
-  <!DOCTYPE html>
-  <html lang="en">
-    <!-- Start of Head Element --> 
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- End of HTML file configuration --> 
-    
-    <!-- Start of Browser Icon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABrJJREFUWEeNV2tsFFUUPudOd2dLozy62243lG0JpraAIFR8VFq7taIoVvCRaDREiwIxRvyrxhfGvyZqVBAwEQwCEaiKArZrePmoiKhtt20i2Da22+4WrQr0sXOPuXcenZndre6vnbn3nvOd73znnDu4d+8+Ze7C6wrA9sOLyZHKyusuARCQfI/Gqv5kvbIexbptzW7MOP11X1+u529thn3pXFvrEO7YfaTYH5zeGyzwA0PDEUIH11jdsoWlcdNumgsEQMri1rW5ta0tyFhuCwBUCABEBANDSRhIDIUlgJQy0RsM+KGowA8oQAgDGsU4KJFlC0rj6RHrWzLH7FwRzhF9UUQsN53HpfMkEPBJAGLRAULuhhgHFrl+fmk8kzOnK5O9SVpa284HGeNpkccTSZkYAk0AOFycUlK9ZpRBv40JHXKMk40JI6c0RdrF0nft54MMsznXlSAZ+ODIkbyxkfEfCLDMVFcwkD+ZDuGQU0xDJbJsvpEORwLSkVi0MywXeZI5H0xCfHhYPJg67J6AS0slb9t3N4W4khMlIANEpnQ4mUgXJUrjgnZEzZFzITidduvXraje2saG2/rRDEYHwaKTTAAUBfxSF8j0/CJRTHOlw27VnXOx1j+YcDhHwC6mpSKNDzb06wVuC8UOQr5GgP+jCWFIOkctCojl4iwnAlPttsZhRW5rJ04yHUwYS2nVASwGcLmusqJiwO3cXufxZFKvVUkgdileT0TQbmfNbHGO3uVMh44iGwjOc8mMXDgi7o4cRG/pYilPpPFBp3MjAUbjmVSnBJNJEzqIAJgNEwBjwDmAULutw1mC07F3K6pa29hQ3+/uXmI5IwMmHToIjBKw7NVhbDbbq13tCNDFVG8a7XYgDhHahGG12UxMhAoDMiVmOxHkZSw1Tas11e7Ise1Bsilbg12LruG3fffBEFc8UUIq8ygKzCsJwzSfKs+JnA8khiGeSNhNpKndAcA2yIwCd00WGxjzr2CC+dTovHC4LNfntexZdW5sdNb5FFEZFlDmAGmyQ2bp8ac7OooAfC0AVC6OcEPtVqkBgOr1wLzScKfq8UUqK0pkiWZK63+WoTtfwjlCbgsBd6h9UI5U/SecX1USBq/XI3LaCajoIMyOlm14TzHU5NnvpXNfC4nIbaVmOjfPB/JnwuxgoX6fkG0bOkmCKB2wbg5izVXuVhnagUQfX11DQNOmP/PaWQBvC0B6nTuAG1Iu8vtB3KxMECYTI69vWoyElyLbDhxzsztZBcbKVxtWLyDEn5AIPdfWDKs33+UXBnW1i8EybMsrdsnuR1SmA0IIBmZZzUoEO3bqs+TEmWP5hEiapi2u39r0i7RnMJHWiJo33DlXAbUdEHyiNj2VEVBvWAEDQ07nANCtpLRayMsFPj4RFSB07icH2FjrUZhobTbbxaiGY/NvfefQOZcI01UQXd+wElH5WAcBMFZ+I/QWXi2aunnWNs8BtjUdDTlAEMGcoU5QO76xnKd46r76rZ8cMkHaL7u6YUscCI8G8wIlJcWnqxaVzWGMyTMXwovgQukSQMa6MJWKrBPz3KbwbU1NIRrPiRLnZbPOn4H8np/kOU3jcOpsV99vvX1L349fTLivsmkpuANADYUDLciwKuSfCdXXloOiKPIL4c/i+cN/VCy/pvEe11QzSNzedDQ0s/3EzzP62vPFK+H8+I8x6E/+AcT5qWk9ybo3Acay9gFx6LGwfycy9rC5qbgwv7d6cXmBTIdQIsHK2i0HD4sGZn62mH38q/V33w6ofC7LgGD0xNnYYO/ghbAZNef8wx09Scu2Pg1tNDaG859Hpmw2LxHE6SQfu7xm7apbKklR9xOSl3iqtm7Lp8czfZVEH19VAzmeKBKME2n37mxq+Z6pufuR4c1mQJzzF3b0JDdbHXJiz/IqxpT61974dbCnb/QtQGTyzs75rv6exLovDMqaN94516Pl5NVsbfrFKSRrCMhAv3yiYaFPSV2sfvfQOSErPaX+95CxR+Q54jw8O/epZ58uLeCcvkRt7y1JQsgfGByF17f0wF9/pzhxeHF7b+LVtKYx5RegsdtdVMbzunDgOUB45corFLZpfQmECmWBDWNqX3UzAKsT+/oHR+H9j35/8oWTfW+7ndu6zxQfhDLErFs331S8ce1Ds98OFarGHt6CtOv6KzXVdxgIb5SDEfhLyv3HX04HkH1qTDVPTIGKPeP7ql9EYC9JmETf5oyPrpBlKEF4fQcAYQlRapXngVMn3aWS/m2Y2e1UYGjP8ioN2WeAcOYv+GfNrPt/GPkXh9t5CzRJWYsAAAAASUVORK5CYII=">
-    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAw5JREFUOE9NU11IFFEUPmdmm3Y3dUtnf1xSNF8CN6OHIOgPwQiKVSJ3JeglyaR8qYcoJagIsgiqlwrT6KnQ2ZVYNx+SrIgoegrUrSCQMnB/NVeZXXZt7ol7Z63m4d65c+Z833e+cy5GXn1o9bqd+xDl7CzTb3b4fEUAAOIL8qX0iA8AoZkZpV62XmAMHPFk6i0ODo/f9rirznlcKkiSFJll+WDA11jkCCgQyAQTyTGlTl6vgQFt8VQGEguZOzioPb9MgFc8ziqodqmAyEFywTUlgAhEBFpsRqlHuwbEzOTMAjCDXUUtpClZZguThP5qVQWuBFGOzDI9GPT5ilzDSCym1KNNk4C1zSfMZACKOiDfjlxoSNOUX2QNA6Lfw0HcKkgoR6xMD34BgHrJrhH7xwwI0Y2kt3cEg4IAuExtZETJkk2AuJ2qKIcAx2REYlx2kjNn+L/RjaC3BwMdRe5PyWcuhISSJcZBJAHi9ahAjEDUnM5wnqiDcoK55O9fo82WEYCmacoy2MN1tTX+TRVlMJ9IQ3xhgYejDs7Mk/lJdIk4KACVkvkpNj2t6GgNIWBrPJWGZDoDFeUbYEvN5jEbFgK+xm1C+n/azfeJUwGHxVtnKwt0DwBBK5ccT4uawa1Wgtfl4oxjK6GB7t/z3/MHHoayJftMBa+7j9yVyhynrUfPKMm8IVqFiFExlQR+j1oJLpsMhdH7RaZnHzQ/eHZ2bdTEzD491uy2W5TZcpfH/qPpIBi2ClEzV7cEG8JybtlfO/0C9GQyt1jIN5wIvUnwmDmtANBZ6xy0WtedPLhze85epa4rKuW1h2/dT/DY+Pkej1LMzumLmdWJj1P2QqE49Ggu0yWsoPDepp6+r4dWV7GfMTbUsr3hktvr7TVo5fKBgcksIsFEV4vDIpVdjWeX+yffT12TUOqyKNR37/rWcTRC+5OfPq+4Hj/52XvvW/rGmr1IptN84zuSeUN52043OC92Hq/p39FYnkI2vHsXyfIYImuR299NmbO1dv/MTOQuIwGV+k2je5oMQ35JsNr2Bz6caKVlwcjTAAAAAElFTkSuQmCC">
-    <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8jC7JAAAAmklEQVRIDbXBAQEAAAABIP6PzgpVJp5y/c8D//Pzi3IN5yD/e3SOJc4ybt3dm2Jc49m0TeW+m3pe/qZ3uf+q2AABv7fUbHkljzogtq1q5Kg5ayz33j8AAACkgk1R2v6AA3A0CyzwhqVo7hcgHsCkqD5Zy6pgnwCjlq7J0Xkj9rrXJ9pzrrrwrZZ8O5l8jwo9ilZmkECaOgtzcPpxq4g6c8nKB0wDgf0vgtKgtfEX+VTSz7TYF/xh6SKgQX8lEjEYfuD5vcJcegMc9KM5eCGgwYGggKK9AGoAaYNOaMDweGhALyyhy+gkLdkY2LAA0+zZHXp2z9Wlz8zDTpYr6ZCpLPbXrmKjDgI/avjX9A7/d9TwJ0B7yZQgxPb++U65RzJ4ZQsddk08wNVN3gafmj6O4XhzHl+BCtnQow5P9lm6zndpRAtOekvs=">
-    <!-- End of Browser Icon -->
+  <title>CB4$H</title>
 
-<!-- Start of Website Browser Title -->
-<title>CB4$H</title>
-<!-- End of Website Browser Title -->
+  <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,...">
+  <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,...">
+  <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,...">
 
-<!-- Start of Stylesheet --> 
-<style>
-    /* Styling for the rainbow text */
-    #rainbow-text {
-        font-size: 3em;
-        text-align: center;
-        margin-top: 50px;
-    }
-
-    /* General body styling */
+  <style>
     body {
-        background-color: #121212;
-        color: #1edf1e;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
+      background-color: #121212;
+      color: #1edf1e;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
-    /* Navigation bar styling */
+    #rainbow-text {
+      font-size: 3em;
+      text-align: center;
+      margin-top: 50px;
+    }
+
     nav {
-        background-color: #121212;
-        text-align: center;
-        padding: 10px 0;
-        margin-top: 20px;
+      background-color: #121212;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 20px;
     }
 
     nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
     }
 
     nav ul li {
-        display: inline;
-        margin-right: 20px;
+      display: inline;
+      margin-right: 20px;
     }
 
     nav ul li a {
-        color: #1edf1e; 
-        text-decoration: none;
-        font-size: 1.2em;
-        padding: 10px 15px;
-        transition: background-color 0.3s ease;
+      color: #1edf1e;
+      text-decoration: none;
+      font-size: 1.2em;
+      padding: 10px 15px;
+      transition: background-color 0.3s ease;
     }
 
-    /* Hover effect for navigation links */
     nav ul li a:hover {
-        background-color: #333; 
-        border-radius: 5px;
+      background-color: #333;
+      border-radius: 5px;
     }
 
-    /* Styling for the page sections */
     .page {
-        display: none;
-        padding: 20px;
-        margin-top: 20px;
-        border-radius: 10px;
+      display: none;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
     }
 
-    /* Styling for active page */
     .page.active {
-        display: block;
+      display: block;
     }
 
-    /* Styling for the <p> text within sections */
     .page p {
-        color: #1edf1e;
+      color: #1edf1e;
     }
 
-    /* Small responsive styling for mobile view */
     @media (max-width: 600px) {
-        nav ul li {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-      #home {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        text-align: center;
-
+      nav ul li {
+        display: block;
+        margin-bottom: 10px;
       }
     }
-</style>
-<!-- End of Stylesheet -->
 
+    #ascii-clock {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      background-color: #121212;
+      color: #1edf1e;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 16px;
+      padding: 10px;
+      z-index: 9999;
+    }
+  </style>
 </head>
-<!-- End of Head Element -->
-
-<!-- Start of Body Element --> 
 <body>
+  <h1 id="rainbow-text">CB4$H</h1>
 
-    <!-- Start of Main Page Header -->
-    <h1 id="rainbow-text">CB4$H</h1>
-    <!-- End of Main Page Header -->
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showPage('home')">Home</a></li>
+      <li><a href="#" onclick="showPage('assessments')">Assessments</a></li>
+      <li><a href="#" onclick="showPage('ctf')">CTF</a></li>
+      <li><a href="#" onclick="showPage('exploits')">Exploits</a></li>
+      <li><a href="#" onclick="showPage('highlights')">Highlights</a></li>
+      <li><a href="#" onclick="showPage('llm')">LLM</a></li>
+      <li><a href="#" onclick="showPage('misc')">Misc</a></li>
+      <li><a href="#" onclick="showPage('projects')">Projects</a></li>
+      <li><a href="#" onclick="showPage('reports')">Reports</a></li>
+      <li><a href="#" onclick="showPage('wordlists')">Wordlists</a></li>
+      <li><a href="#" onclick="showPage('aboutme')">About Me</a></li>
 
-    <!-- Start of Navigation Bar Code --> 
-    <nav>
-        <ul>
-            <li><a href="#" onclick="showPage('home')">Home</a></li>
-            <li><a href="#" onclick="showPage('ctF')">CTF</a></li>
-            <li><a href="#" onclick="showPage('projects')">Projects</a></li>
-            <li><a href="#" onclick="showPage('reports')">Reports</a></li>
-            <li><a href="#" onclick="showPage('misc')">Misc</a></li>
-        </ul>
-    </nav>
-    <!-- End of Navigation Bar Code -->
+    </ul>
+  </nav>
 
-    <!-- Start of Sections Element -->
-    <section id="home" class="page active">
-        <h1>Welcome</h1>
-        <p></p>
-    </section>
+  <section id="home" class="page">
+    <h1>Home</h1>
+    <p>Welcome to CB4$H portal</p>
+  </section>
 
-    <section id="assessments" class="page">
-        <h1>Assessments</h1>
-        <p> </p>
-    </section>
+  <section id="assessments" class="page">
+    <h1>Assessments</h1>
+    <details>
+      <summary><strong>ASUS_ROG_STRIX_G18_REVIEW</strong></summary>
+      <pre><code>
+        I've had this machine for less than a year. Within the time that I had it, I've experienced multiple issues. 
+For one, the product spontaneously terminates the Asus Precision Trackpad functionality. 
+I have troubleshooted the issue and as of yet, the only thing that reactivates it is a soft reboot.
+Additionally, the Windows 11 native OS is buggy. 
+This is not a primary concern of mine as I use the machine for my security research work and I use VMware anyway, 
+however for those who use the machine to game, this could definitely be problematic.
+For clarification purposes, the machine's display screen on Windows 11 taskbar flickers displaying multiple taskbars on the screen.
+The machine is also prone to overheating even when in eco mode. 
+I've troubleshooted both issues and thus far, the only band-aid fix has been to hard reboot from BIOS. 
+Thankfully, none of these issues besides the touchpad dying exist through VM isolation, 
+so I assume this is an issue with the method in which the native Windows 11 OS is configured. 
+The touchpad issue also can be perma-fixed by using an external mouse with the computer. 
+Overall, this is a powerful yet unstable machine.
+I purchased the G15 in 2022 and the performance otherwise was great, but the same issues existed. 
+It would frequently overheat and blue screen.
+I personally would not recommend ASUS ROG machines. !!! Review was written on the Best Buy (place of purchase) website !!!
+      </code></pre>
+    </details>
 
-    <section id="projects" class="page"> 
-        <h1>Projects</h1>
-        <p></p>
-    </section>
+    <details>
+        <summary><strong>Syfe</strong></summary>
+        <pre><code>
+     
 
-    <section id="reports" class="page"> 
-        <h1>Reports</h1>
-        <p></p>
-    </section>
+Syfe Security Assessment 
+Report Date: 3-23-2025 
+Researcher: cybercossack 
+Target: Syfe (https://www.syfe.com) 
+Scope: Web application, API, authentication mechanisms 
+Methodology: Manual and automated security testing 
 
-     <section id="ctf" class="page"> 
-        <h1>CTF</h1>
-        <p></p>
-    </section>
+1. Introduction This report details my security assessment of Syfe as part of HackerOne’s private bug bounty program. 
+My primary objective was to identify potential vulnerabilities, focusing on IDOR, SSRF, XSS, and SQLi. Despite extensive testing, no vulnerabilities were found. 
+This exercise served as a valuable learning experience, particularly in cloud-based security infrastructure, API security, and enumeration limitations. 
 
-    <section id="exploits" class="page">
-        <h1>Exploits</h1>
-        <p></p>
-    </section>
-    <!-- End of Section Element -->
+2. Enumeration & Initial Testing 
+2.1 Web Application & API Reconnaissance 
+• I attempted to access Syfe’s API endpoints through Burp Suite, but received a 404 Not Found response. 
+• A likely cause of this error was the lack of valid credentials, as Syfe requires an account for API access.
+• Creating an account was not an option, as Syfe mandates real ID verification, which raises privacy concerns, especially given its operational ties to Singapore and potential connections to China (as noted in historical data from the Wayback Machine). 
+2.2 Automated Security Scanning I ran multiple security scanners to detect potential vulnerabilities: • Wapiti (Web vulnerability scanner) → No findings. 
+• Kolimbus (RCE scanner) → No findings. 
+• Burp Suite Scanner → No findings. 
+• Nmap & Cloudflare Bypass Attempts 
+→ Unsuccessful due to Cloudflare protection. 
 
-    <!-- Start of Javascript -->
-    <script>
-        // Function to change the color of the header text
-        const rainbowText = document.getElementById('rainbow-text');
+3. Manual Testing 
+3.1 Parameter-Based Attacks I manually tested various parameters to identify potential security flaws:
+• IDOR → No sensitive object references were found. 
+• SSRF → Attempts to trigger server-side requests failed. 
+• XSS → No input reflection was detected. 
+• SQLi → No injection points were identified.
 
-        function changeColor() {
-            const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#8B00FF'];
-            let i = 0;
+4. Observations & Challenges 
+• Extensive Security Measures: Syfe’s Cloudflare protection, real ID requirements, and locked-down API significantly reduce the attack surface. 
+• High Report Volume: With 157 resolved reports, most low-hanging vulnerabilities are likely patched. 
+• Credential Barrier: Full API testing requires a verified user account, limiting unauthenticated testing. 
 
-            setInterval(() => {
-                rainbowText.style.color = colors[i];
-                i = (i + 1) % colors.length;
-            }, 300);
-        }
+5. Future Research & Recommendations If revisited in the future, the following areas could be explored:
+• Authenticated Testing (if an account can be safely created). 
+• Cloudflare Bypass Methods (advanced fingerprinting, WAF evasion techniques).
+• Deep API Recon (once endpoint structure is better understood). 
 
-        changeColor();
+6. Conclusion Despite not finding exploitable vulnerabilities, this engagement provided insights into high-security financial platforms and reinforced the importance of API authentication barriers in modern web applications. 
+Given my current financial priorities, I am shifting focus to more promising targets but may return to Syfe as my expertise evolves. 
 
-        // Function to show the selected page section
-        function showPage(pageId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.page');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
+7. Proof of Concept:
 
-            // Show the selected page section
-            const page = document.getElementById(pageId);
-            if (page) {
-                page.classList.add('active');
-            }
-        }
-    </script>
-    <!-- End of Javascript -->
+• Burp Suite Logs:
+1742697857442	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742697857441	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742697857510	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/heartbeat?&t=1742697857356	0	0
+1742697857504	HTTP	REQUEST	GET	https://wallet.okx.com/priapi/v1/wallet/network/blinks/url?t=1742697857332	0	0
+1742697857510	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/currencies?locale=en_US&t=1742697857337	0	0
+1742697857505	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/common/chain/info/new2?t=1742697857337	0	0
+1742697857509	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/coins/support/addCoin?t=1742697857335	0	0
+1742697857504	HTTP	REQUEST	GET	https://static.okx.com/cdn/assets/files/224/95D565EF66E7DFF9.txt?&t=1742697857345	0	0
+1742697857509	HTTP	REQUEST	POST	https://wallet.okx.com/v1/deposit/plugin/address/checkDAppUrl?t=1742697857335	0	0
+1742697857503	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/get/whitelist	0	0
+1742697857506	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/common/test/networks2?t=1742697857331	0	0
+1742697857504	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742697857337	0	0
+1742697857506	HTTP	REQUEST	GET	https://wallet.okx.cab/v1/deposit/plugin/heartbeat?&t=1742697857356	0	0
+1742697857504	HTTP	REQUEST	GET	https://wallet.okx.ac/v1/deposit/plugin/heartbeat?&t=1742697857356	0	0
+1742697857509	HTTP	REQUEST	GET	https://wallet.okex.org/v1/deposit/plugin/heartbeat?&t=1742697857345	0	0
+1742697857507	HTTP	REQUEST	GET	https://static.okx.cab/cdn/assets/files/224/95D565EF66E7DFF9.txt?&t=1742697857345	0	0
+1742697857504	HTTP	REQUEST	GET	https://wallet.ouxyi.cash/v1/deposit/plugin/heartbeat?&t=1742697857345	0	0
+1742697857505	HTTP	REQUEST	GET	https://static.coinall.ltd/cdn/assets/files/224/95D565EF66E7DFF9.txt?&t=1742697857345	0	0
+1742697859349	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742697859342	0	0
+1742697859410	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742697859343	0	0
+1742697861354	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742697861348	0	0
+1742697861417	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742697861349	0	0
+1742697862389	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742697863360	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742697863355	0	0
+1742697864110	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742697863356	0	0
+1742697865367	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742697865362	0	0
+1742697866031	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742697865362	0	0
+1742697867366	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742697867363	0	0
+1742697877363	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742697919685	HTTP	REQUEST	GET	https://www.google.com/search?q=api&oq=api&pf=op&sourceid=chrome&ie=UTF-8	0	0
+1742697937359	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742697949624	HTTP	REQUEST	POST	https://wallet.okx.com/priapi/v2/wallet/url/checkv2?t=1742697949621	0	0
+1742697969631	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742697988468	HTTP	REQUEST	POST	https://wallet.okx.com/priapi/v2/wallet/url/checkv2?t=1742697988465	0	0
+1742697997958	HTTP	REQUEST	GET	http://www.api.syfe.com/	0	0
+1742698008473	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742698103389	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742698107338	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742698345410	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742698457311	HTTP	REQUEST	GET	https://wallet.okx.com/priapi/v1/wallet/network/blinks/url?t=1742698457306	0	0
+1742698459363	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742698459347	0	0
+1742698461364	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742698461353	0	0
+1742698463454	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742698463387	0	0
+1742698465407	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742698465396	0	0
+1742698467488	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742698467427	0	0
+1742698477376	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742698588465	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742698832480	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742699057324	HTTP	REQUEST	GET	https://wallet.okx.com/priapi/v1/wallet/network/blinks/url?t=1742699057310	0	0
+1742699059420	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742699059374	0	0
+1742699061403	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742699061382	0	0
+1742699063444	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742699063415	0	0
+1742699065454	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742699065424	0	0
+1742699067500	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742699067458	0	0
+1742699077349	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742699077457	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742699323453	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742699570468	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742699657312	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/common/test/networks2?t=1742699657307	0	0
+1742699657312	HTTP	REQUEST	GET	https://wallet.okx.com/priapi/v1/wallet/network/blinks/url?t=1742699657308	0	0
+1742699659344	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742699659341	0	0
+1742699661345	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742699661343	0	0
+1742699665467	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742699665397	0	0
+1742699667489	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742699667428	0	0
+1742699663348	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742699663345	0	0
+1742699677343	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742699818511	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742700067507	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742700257316	HTTP	REQUEST	GET	https://wallet.okx.com/priapi/v1/wallet/network/blinks/url?t=1742700257308	0	0
+1742700259346	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742700259341	0	0
+1742700261350	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742700261346	0	0
+1742700263356	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742700263351	0	0
+1742700265355	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742700265353	0	0
+1742700267360	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742700267357	0	0
+1742700277319	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742700317511	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742700567518	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742700817541	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742700857315	HTTP	REQUEST	GET	https://wallet.okx.com/priapi/v1/wallet/network/blinks/url?t=1742700857308	0	0
+1742700859343	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742700859340	0	0
+1742700861347	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742700861342	0	0
+1742700863357	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742700863349	0	0
+1742700865359	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742700865352	0	0
+1742700867359	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742700867355	0	0
+1742700877317	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742701067550	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742706330812	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742706470560	HTTP	REQUEST	POST	https://wallet.okx.com/v1/deposit/plugin/address/checkDAppUrl?t=1742706470558	0	0
+1742706470560	HTTP	REQUEST	GET	https://wallet.okx.com/priapi/v1/wallet/network/blinks/url?t=1742706470558	0	0
+1742706470559	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/common/test/networks2?t=1742706470555	0	0
+1742706472595	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742706472592	0	0
+1742706474596	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742706474594	0	0
+1742706476601	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742706476598	0	0
+1742706478606	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742706478603	0	0
+1742706480611	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742706480607	0	0
+1742706490562	HTTP	REQUEST	GET	https://wallet.okx.com/v1/deposit/plugin/get/whitelist	0	0
+1742706490569	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+1742706580818	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742706830821	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742707070559	HTTP	REQUEST	GET	https://wallet.okx.com/priapi/v1/wallet/network/blinks/url?t=1742707070556	0	0
+1742707072597	HTTP	REQUEST	GET	https://www.okx-httpdns.com/v2/support/doh/plugin/wallet?&t=1742707072592	0	0
+1742707074597	HTTP	REQUEST	GET	https://www.okx-doh.com/v2/support/doh/plugin/wallet?&t=1742707074595	0	0
+1742707076602	HTTP	REQUEST	GET	https://www.okx.com/v2/support/doh/plugin/wallet?&t=1742707076598	0	0
+1742707078604	HTTP	REQUEST	GET	https://47.57.9.204/v2/support/doh/plugin/wallet?&t=1742707078601	0	0
+1742707080612	HTTP	REQUEST	GET	https://47.75.96.239/v2/support/doh/plugin/wallet?&t=1742707080606	0	0
+1742707080820	HTTP	REQUEST	GET	https://wsdexpri.okx.com/ws/v5/iprivate	0	0
+1742707090563	HTTP	REQUEST	POST	https://wallet.okx.com/apmfe/api/120/batch/envelope/?sentry_key=b25a7d61802a41b6bf564e64acff1b50&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.74.1&v=1.1.46	0	0
+• Nmap Scan Output:
+# Nmap 7.95 scan initiated Sat Mar 22 10:09:28 2025 as: /usr/lib/nmap/nmap --privileged -sC -sV -T4 -p- -oN syfe_nmap_scan.txt ag.syfe.com blog.syfe.com email.syfe.com help.syfe.com hk.syfe.com www.syfe.com
+Nmap scan report for ag.syfe.com (104.18.6.131)
+Host is up (0.037s latency).
+Other addresses for ag.syfe.com (not scanned): 2606:4700::6812:683 2606:4700::6812:783 104.18.7.131
+Not shown: 65532 filtered tcp ports (no-response)
+PORT     STATE SERVICE  VERSION
+80/tcp   open  http     Cloudflare http proxy
+|_http-title: Attention Required! | Cloudflare
+|_http-server-header: cloudflare
+443/tcp  open  ssl/http Cloudflare http proxy
+| ssl-cert: Subject: commonName=syfe.com
+| Subject Alternative Name: DNS:syfe.com, DNS:*.syfe.com
+| Not valid before: 2025-02-07T06:22:53
+|_Not valid after:  2025-05-08T07:22:45
+|_http-server-header: cloudflare
+|_http-title: Attention Required! | Cloudflare
+8080/tcp open  http     Cloudflare http proxy
+|_http-title: Attention Required! | Cloudflare
+|_http-server-header: cloudflare
 
+Nmap scan report for blog.syfe.com (104.18.7.131)
+Host is up (0.036s latency).
+Other addresses for blog.syfe.com (not scanned): 2606:4700::6812:683 2606:4700::6812:783 104.18.6.131
+Not shown: 65532 filtered tcp ports (no-response)
+PORT     STATE SERVICE  VERSION
+80/tcp   open  http     Cloudflare http proxy
+|_http-server-header: cloudflare
+|_http-title: Attention Required! | Cloudflare
+443/tcp  open  ssl/http Cloudflare http proxy
+|_http-server-header: cloudflare
+|_http-title: Attention Required! | Cloudflare
+| ssl-cert: Subject: commonName=blog.syfe.com
+| Subject Alternative Name: DNS:blog.syfe.com, DNS:*.blog.syfe.com
+| Not valid before: 2025-03-09T04:22:19
+|_Not valid after:  2025-06-07T05:22:14
+8080/tcp open  http     Cloudflare http proxy
+|_http-server-header: cloudflare
+|_http-title: Attention Required! | Cloudflare
+
+Nmap scan report for help.syfe.com (216.198.53.1)
+Host is up (0.039s latency).
+Other addresses for help.syfe.com (not scanned): 216.198.54.1
+Not shown: 65532 filtered tcp ports (no-response)
+PORT     STATE SERVICE  VERSION
+80/tcp   open  http     Cloudflare http proxy
+|_http-title: Did not follow redirect to https://help.syfe.com/
+|_http-server-header: cloudflare
+443/tcp  open  ssl/http Cloudflare http proxy
+| http-title: Just a moment...
+|_Requested resource was https://help.syfe.com/hc/en-us
+|_http-server-header: cloudflare
+| http-robots.txt: 40 disallowed entries (15 shown)
+| /children /groups /organizations /requests 
+| /registration /plans /accounts /account /proxy /rules /tags 
+|_/ticket_fields /reports /search /slas
+| ssl-cert: Subject: commonName=help.syfe.com
+| Subject Alternative Name: DNS:help.au.syfe.com, DNS:help.hk.syfe.com, DNS:help.syfe.com
+| Not valid before: 2025-03-11T23:51:19
+|_Not valid after:  2025-06-09T23:51:18
+8080/tcp open  http     Cloudflare http proxy
+|_http-server-header: cloudflare
+|_http-title: Did not follow redirect to https://help.syfe.com/
+
+Nmap scan report for hk.syfe.com (207.174.61.1)
+Host is up (0.038s latency).
+Other addresses for hk.syfe.com (not scanned): 91.197.243.143
+Not shown: 65533 filtered tcp ports (no-response)
+PORT    STATE SERVICE    VERSION
+80/tcp  open  tcpwrapped
+|_http-title: Did not follow redirect to https://hk.syfe.com/
+443/tcp open  tcpwrapped
+|_http-title: Site doesn't have a title.
+| ssl-cert: Subject: commonName=hk.syfe.com
+| Subject Alternative Name: DNS:hk.syfe.com
+| Not valid before: 2025-03-14T00:46:16
+|_Not valid after:  2025-06-12T00:46:15
+
+Nmap scan report for email.syfe.com (104.18.6.131)
+Host is up (0.036s latency).
+Other addresses for email.syfe.com (not scanned): 2606:4700::6812:683 2606:4700::6812:783 104.18.7.131
+Not shown: 65532 filtered tcp ports (no-response)
+PORT     STATE SERVICE  VERSION
+80/tcp   open  http     Cloudflare http proxy
+|_http-server-header: cloudflare
+|_http-title: Attention Required! | Cloudflare
+443/tcp  open  ssl/http Cloudflare http proxy
+|_http-server-header: cloudflare
+| ssl-cert: Subject: commonName=syfe.com
+| Subject Alternative Name: DNS:syfe.com, DNS:*.syfe.com
+| Not valid before: 2025-02-07T06:22:53
+|_Not valid after:  2025-05-08T07:22:45
+|_http-title: Attention Required! | Cloudflare
+8080/tcp open  http     Cloudflare http proxy
+|_http-title: Attention Required! | Cloudflare
+|_http-server-header: cloudflare
+
+Nmap scan report for www.syfe.com (104.18.6.131)
+Host is up (0.035s latency).
+Other addresses for www.syfe.com (not scanned): 2606:4700::6812:783 2606:4700::6812:683 104.18.7.131
+Not shown: 65532 filtered tcp ports (no-response)
+PORT     STATE SERVICE  VERSION
+80/tcp   open  http     Cloudflare http proxy
+|_http-title: Attention Required! | Cloudflare
+|_http-server-header: cloudflare
+443/tcp  open  ssl/http Cloudflare http proxy
+|_http-server-header: cloudflare
+| ssl-cert: Subject: commonName=syfe.com
+| Subject Alternative Name: DNS:syfe.com, DNS:*.syfe.com
+| Not valid before: 2025-02-07T06:22:53
+|_Not valid after:  2025-05-08T07:22:45
+|_http-title: Attention Required! | Cloudflare
+8080/tcp open  http     Cloudflare http proxy
+|_http-server-header: cloudflare
+|_http-title: Attention Required! | Cloudflare
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Mar 22 10:18:10 2025 -- 6 IP addresses (6 hosts up) scanned in 521.92 seconds
+
+• Scanner Output Status: No Vulnerabilities 
+
+[+] Started scan for URL "https://www.syfe.com"
+
+[*] Trying method "OPTIONS" with magic final part "/~1/.rem"
+[*] Trying method "POST" with magic final part "/~1/.rem"
+[*] Trying method "DEBUG" with magic final part "/~1/.rem"
+[*] Trying method "TRACE" with magic final part "/~1/.rem"
+[*] Trying method "GET" with magic final part "/~1/.rem"
+[*] Trying method "HEAD" with magic final part "/~1/.rem"
+[*] Trying method "OPTIONS" with magic final part "/~1/"
+[*] Trying method "POST" with magic final part "/~1/"
+[*] Trying method "DEBUG" with magic final part "/~1/"
+[*] Trying method "TRACE" with magic final part "/~1/"
+[*] Trying method "GET" with magic final part "/~1/"
+[*] Trying method "HEAD" with magic final part "/~1/"
+[*] Trying method "OPTIONS" with magic final part "\a.aspx"
+[*] Trying method "POST" with magic final part "\a.aspx"
+[*] Trying method "DEBUG" with magic final part "\a.aspx"
+[*] Trying method "TRACE" with magic final part "\a.aspx"
+[*] Trying method "GET" with magic final part "\a.aspx"
+[*] Trying method "HEAD" with magic final part "\a.aspx"
+[*] Trying method "OPTIONS" with magic final part "\a.asp"
+[*] Trying method "POST" with magic final part "\a.asp"
+[*] Trying method "DEBUG" with magic final part "\a.asp"
+[*] Trying method "TRACE" with magic final part "\a.asp"
+[*] Trying method "GET" with magic final part "\a.asp"
+[*] Trying method "HEAD" with magic final part "\a.asp"
+[*] Trying method "OPTIONS" with magic final part "/a.aspx"
+[*] Trying method "POST" with magic final part "/a.aspx"
+[*] Trying method "DEBUG" with magic final part "/a.aspx"
+[*] Trying method "TRACE" with magic final part "/a.aspx"
+[*] Trying method "GET" with magic final part "/a.aspx"
+[*] Trying method "HEAD" with magic final part "/a.aspx"
+[*] Trying method "OPTIONS" with magic final part "/a.asp"
+[*] Trying method "POST" with magic final part "/a.asp"
+[*] Trying method "DEBUG" with magic final part "/a.asp"
+[*] Trying method "TRACE" with magic final part "/a.asp"
+[*] Trying method "GET" with magic final part "/a.asp"
+[*] Trying method "HEAD" with magic final part "/a.asp"
+[*] Trying method "OPTIONS" with magic final part "/a.shtml"
+[*] Trying method "POST" with magic final part "/a.shtml"
+[*] Trying method "DEBUG" with magic final part "/a.shtml"
+[*] Trying method "TRACE" with magic final part "/a.shtml"
+[*] Trying method "GET" with magic final part "/a.shtml"
+[*] Trying method "HEAD" with magic final part "/a.shtml"
+[*] Trying method "OPTIONS" with magic final part "/a.asmx"
+[*] Trying method "POST" with magic final part "/a.asmx"
+[*] Trying method "DEBUG" with magic final part "/a.asmx"
+[*] Trying method "TRACE" with magic final part "/a.asmx"
+[*] Trying method "GET" with magic final part "/a.asmx"
+[*] Trying method "HEAD" with magic final part "/a.asmx"
+[*] Trying method "OPTIONS" with magic final part "/a.ashx"
+[*] Trying method "POST" with magic final part "/a.ashx"
+[*] Trying method "DEBUG" with magic final part "/a.ashx"
+[*] Trying method "TRACE" with magic final part "/a.ashx"
+[*] Trying method "GET" with magic final part "/a.ashx"
+[*] Trying method "HEAD" with magic final part "/a.ashx"
+[*] Trying method "OPTIONS" with magic final part "/a.config"
+[*] Trying method "POST" with magic final part "/a.config"
+[*] Trying method "DEBUG" with magic final part "/a.config"
+[*] Trying method "TRACE" with magic final part "/a.config"
+[*] Trying method "GET" with magic final part "/a.config"
+[*] Trying method "HEAD" with magic final part "/a.config"
+[*] Trying method "OPTIONS" with magic final part "/a.php"
+[*] Trying method "POST" with magic final part "/a.php"
+[*] Trying method "DEBUG" with magic final part "/a.php"
+[*] Trying method "TRACE" with magic final part "/a.php"
+[*] Trying method "GET" with magic final part "/a.php"
+[*] Trying method "HEAD" with magic final part "/a.php"
+[*] Trying method "OPTIONS" with magic final part "/a.jpg"
+[*] Trying method "POST" with magic final part "/a.jpg"
+[*] Trying method "DEBUG" with magic final part "/a.jpg"
+[*] Trying method "TRACE" with magic final part "/a.jpg"
+[*] Trying method "GET" with magic final part "/a.jpg"
+[*] Trying method "HEAD" with magic final part "/a.jpg"
+[*] Trying method "OPTIONS" with magic final part "/webresource.axd"
+[*] Trying method "POST" with magic final part "/webresource.axd"
+[*] Trying method "DEBUG" with magic final part "/webresource.axd"
+[*] Trying method "TRACE" with magic final part "/webresource.axd"
+[*] Trying method "GET" with magic final part "/webresource.axd"
+[*] Trying method "HEAD" with magic final part "/webresource.axd"
+[*] Trying method "OPTIONS" with magic final part "/a.xxx"
+[*] Trying method "POST" with magic final part "/a.xxx"
+[*] Trying method "DEBUG" with magic final part "/a.xxx"
+[*] Trying method "TRACE" with magic final part "/a.xxx"
+[*] Trying method "GET" with magic final part "/a.xxx"
+[*] Trying method "HEAD" with magic final part "/a.xxx"
+[-] Host "https://www.syfe.com" seems to be not vulnerable or no short name was found
+
+[+] Scan completed in 780 seconds
+[+] Requests sent: 336
+
+        </code></pre>
+      </details>
+  </section>
+
+  <section id="ctf" class="page">
+    <h1>CTF</h1>
+    <details>
+      <summary><strong>Hacker101 CTF</strong></summary>
+      <details>
+        <summary><strong>Level 0</strong></summary>
+        <pre><code>
+Challenge: Background Image Flag
+Vulnerability Type: Unprotected File Disclosure
+
+Steps:
+1. Opened Inspect Element (DevTools)
+2. Observed background.png in the body element
+3. Appended /background.png to the challenge URL
+4. Navigated to the new URL → Flag Captured!
+
+Takeaway:
+* Always check Inspect Element & DevTools for hidden assets.
+* Some files are publicly accessible but not directly linked in the UI.
+* This technique can be useful in real-world bug bounty hunting to find exposed files.
+        </code></pre>
+      </details>
+      <details>
+        <summary><strong>Level 1</strong></summary>
+        <pre><code>
+
+Challenge: XSS Markdown Flag
+
+Vulnerability Type: Cross-Site Scripting (XSS) via Markdown
+
+Steps:
+
+    Accessed the image page on the platform.
+
+    Injected a malicious XSS payload using Markdown syntax into the input field.
+
+    Submitted the form and observed the script execution on the page.
+
+    The payload triggered, and the flag was captured.
+
+Takeaway:
+
+    Always test user inputs for XSS vulnerabilities.
+
+    Markdown syntax can sometimes be abused for XSS payloads in web applications.
+
+    XSS vulnerabilities can often lead to the execution of arbitrary scripts, potentially compromising user sessions.
+
+Challenge: SQL Injection Flag
+
+Vulnerability Type: SQL Injection
+
+Steps:
+
+    Identified a user-controlled input field in the URL.
+
+    Injected a single quote (') into the link to test for SQL injection vulnerability.
+
+    The injection caused an SQL error, and the flag was returned.
+
+Takeaway:
+
+    Always sanitize user inputs to prevent SQL injection vulnerabilities.
+
+    SQL injection can be used to manipulate database queries and retrieve sensitive information.
+
+    Proper input validation and parameterized queries can prevent SQL injection attacks.
+
+Challenge: IDOR Flag
+
+Vulnerability Type: Insecure Direct Object Reference (IDOR)
+
+Steps:
+
+    Created a new page, which generated the URL /page/edit/11.
+
+    Modified the URL to /page/edit/7 to access a different page.
+
+    Navigated to the new URL, and a flag was returned.
+
+Takeaway:
+
+    Always verify user access rights before allowing access to sensitive resources.
+
+    Insecure Direct Object References can expose objects that should be restricted to authorized users.
+
+    Proper access control checks and unique identifiers for each user can mitigate this vulnerability.
+
+Challenge: Inline XSS Flag
+
+Vulnerability Type: Cross-Site Scripting (XSS) - Inline
+
+Steps:
+
+    Accessed the testing page on the platform.
+
+    Injected an XSS payload into a button input.
+
+    Triggered the payload by interacting with the button.
+
+    The XSS executed and returned a flag.
+
+Takeaway:
+
+    Always validate and sanitize user input, especially in interactive elements like buttons.
+
+    XSS vulnerabilities can be introduced via inputs in forms, buttons, or other interactive elements.
+
+    In real-world bug bounty hunting, look for XSS in non-obvious locations like buttons, images, and embedded objects.
+
+        </code></pre>
+      </details>
+      <details>
+        <summary><strong>Level 2</strong></summary>
+        <pre><code>
+
+            ## **SQL Injection - Hacker101 CTF Challenge**  
+
+            ### **Overview**  
+            This write-up documents a successful SQL Injection attack performed against a vulnerable login form in the [Hacker101 CTF](https://ctf.hacker101.com/). Using SQLMap, we were able to enumerate the database structure and dump credentials, leading to flag retrieval.  
+            
+            ### **Steps Taken**  
+            
+            1. **Identifying the Injection Point**  
+               - Tested the login form with random credentials (`admin:test`).  
+               - Captured the **POST request** using Burp Suite or a browser's developer tools.  
+            
+            2. **Enumerating the Database**  
+               - Used SQLMap to determine the database system and check for injectable parameters:  
+                 ```bash
+                 sqlmap -u "https://target/login" --data "username=admin&password=test" --batch --dbs
+                 ```  
+               - Found that the backend was **MySQL (MariaDB fork)**.  
+            
+            3. **Enumerating Tables**  
+               - Listed tables in the vulnerable database:  
+                 ```bash
+                 sqlmap -u "https://target/login" --data "username=admin&password=test" -D level2 --tables --batch
+                 ```  
+               - Found two tables: **admins** and **pages**.  
+            
+            4. **Extracting Credentials**  
+               - Retrieved column names from the `admins` table:  
+                 ```bash
+                 sqlmap -u "https://target/login" --data "username=admin&password=test" -D level2 -T admins --columns --batch
+                 ```  
+               - Found columns: `id`, `username`, and `password`.  
+            
+            5. **Dumping Credentials**  
+               - Extracted admin credentials using time-based blind SQL injection:  
+                 ```bash
+                 sqlmap -u "https://target/login" --data "username=admin&password=test" -D level2 -T admins --dump --time-sec=20 --batch
+                 ```  
+               - Credentials retrieved:  
+                 ```
+                 username: admin  
+                 password: [hashed or plaintext]  
+                 ```  
+               - Used the credentials to log in and capture the flag.  
+            
+            ### **Lessons Learned**  
+            - Time-based blind SQLi is **slow** but effective.  
+            - Increasing `--time-sec` improves stability but lengthens execution time.  
+            - Column enumeration may require `--no-cast` or `--hex` in case of errors.  
+            - Always verify extracted credentials against the login page.  
+            
+            ### **Mitigation Strategies**  
+            - Use **prepared statements** and **parameterized queries**.  
+            - Implement **Web Application Firewalls (WAFs)** to detect and block SQLi attempts.  
+            - Limit error messages to avoid revealing database structure.  
+            
+        </code></pre>
+      </details>
+      <details>
+        <summary><strong>Level 3</strong></summary>
+        <pre><code>
+
+            Hacker101 CTF - Encrypted Pastebin
+
+            Flag 1: 
+            Wrote "vv" within both the title and the subject field.
+            Received an alphanumeric ?/post url. 
+            Extracted the numbers and letters that followed the post and entered text
+            Redirected to another page with the flag!
+            !!! After completing four levels, 27/27 points were obtained for the elgibility for private programs on HackerOne !!!
+        </code></pre>
+      </details>
+    </details>
+  </section>
+
+  <section id="exploits" class="page">
+    <h1>Exploits</h1>
+  
+    <details>
+      <summary><strong>RCE</strong></summary>
+      <pre><code>
+      </code></pre>
+    </details>
+ <!-- invisible divider elements-->
+    <div style="margin: 20px 0;"></div>
+  
+    <details>
+      <summary><strong>CMDi</strong></summary>
+      <pre><code>
+        
+    </code></pre>
+    </details>
+  
+    <div style="margin: 20px 0;"></div>
+  
+    <details>
+      <summary><strong>SQLi</strong></summary>
+    
+  
+  
+          <details>
+            <summary><strong>enumeration_tool.py</strong></summary>
+            <pre><code>
+    import requests, re, argparse
+    from bs4 import BeautifulSoup 
+    
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--verbose", action="store_true", help="Enable verbose output")
+    args = parser.parse_args()
+    
+    target = "[URL GOES HERE]"
+    
+    def log(msg):
+        if args.verbose:
+            print(msg)
+    
+    log(f"Targeting: {target}")
+    r = requests.get(target)
+    log(f"Received response: {r.status_code}")
+    
+    paths = re.findall(r'href=["\'](.*?)["\']', r.text)
+    log(f"Found {len(paths)} hrefs on page")
+    
+    potential_SQLi = []
+    
+    for path in paths:
+        log(f"Analyzing path: {path}")
+        if "?" in path:
+            potential_SQLi.append(path)
+            print(f"[Potential SQLi found] {path}")
+    
+    log(f"Found {len(potential_SQLi)} potential SQLi")
+            </code></pre>
+          </details>
+     
+    
+    </details>
+    
+    <div style="margin: 20px 0;"></div>
+  
+    <details>
+      <summary><strong>SSTI</strong></summary>
+      <pre><code>
+      </code></pre>
+    </details>
+  
+    <div style="margin: 20px 0;"></div>
+  
+    <details>
+      <summary><strong>XSS</strong></summary>
+      <pre><code>
+      </code></pre>
+    </details>
+  </section>
+  
+  
+  <section id="highlights" class="page"><h1>Highlights</h1>
+    <p> WIP: FUTURE HIGHLIGHTS WILL GO HERE.</p></section>
+  <section id="llm" class="page"><h1>LLM</h1><p>
+    <ul style="list-style: none; padding-left: 0;">
+      <li> ! This is a WIP progress directory for a security research focused LLM.</li>
+      <li> ! The intention of this LLM will be to upscale penetration testing.</li>
+      <li> ! The ultimate vision is to launch this into a niche field of penetration testing and merge my personal specialization with LLM. (It is tentatively IDOR-focused but the concentration may shift as I expand my research efforts.)</li>
+      <li> ! This project is bookmarked for when I am ready to undertake a project in NLP.</li>
+    </ul>
+    
+  </p></section>
+  <section id="misc" class="page"><h1>Misc</h1>
+    <p>The intention of the miscellaneous directory is to upload files/projects here that do not neatly fit into any of the established directories, 
+      effectively reducing branch clutter.</p></section>
+      <section id="projects" class="page"><h1>Projects</h1>
+
+        <!-- Blockchain Section-->
+        <details>
+          <summary><strong>Blockchain</strong></summary>
+          <div style="margin-left: 20px;">
+            <details>
+              <summary><strong>Monero</strong></summary>
+              <div style="margin-left: 20px;">
+                <details>
+                  <summary><strong>JS</strong></summary>
+                  <div style="margin-left: 20px;">
+                    <details>
+                      <summary><strong>SOL_TRANSACTION_JSCRIPT.js</strong></summary>
+                      <pre><code>...JS script code...</code></pre>
+                    </details>
+                  </div>
+                </details>
+      
+                <details>
+                  <summary><strong>RS</strong></summary>
+                  <div style="margin-left: 20px;">
+                    <details>
+                      <summary><strong>MONERO.rs</strong></summary>
+                      <pre><code>...Rust script code...</code></pre>
+                    </details>
+                  </div>
+                </details>
+              </div>
+            </details>
+          </div>
+        </details>
+      
+        <div style="margin-top: 20px;"></div>
+      
+        <!-- Clock Section -->
+        <details>
+          <summary><strong>Clock</strong></summary>
+          <div style="margin-left: 20px;">
+            <details>
+              <summary><strong>ascii_clock.py</strong></summary>
+              <pre><code>
+                import time
+                import os 
+                from pyfiglet import Figlet
+                import argparse
+                
+                
+                parser = argparse.ArgumentParser(description="ASCII Clock with Verbose Mode")
+                parser.add_argument('-v', '--verbose', action='store_true', help='Enable verbose mode')
+                args = parser.parse_args()
+                VERBOSE = args.verbose
+                
+                
+                def clear_screen():
+                    os.system('cls' if os.name == 'nt' else 'clear')
+                    if VERBOSE:
+                        print("[*] Screen cleared.")
+                
+                def get_current_time():
+                    t = time.strftime('%H:%M:%S')
+                    if VERBOSE:
+                        print(f"[+] Fetched current time: {t}")
+                    return t
+                
+                
+                def ascii_clock():
+                    figlet = Figlet(font='big')
+                    if VERBOSE:
+                        print("[*] ASCII font initialized: big")
+                        print("[*] Clock initializing... Press Ctrl+C to terminate")
+                
+                    try:
+                        while True:
+                            clear_screen()
+                            current_time = get_current_time()
+                            ascii_time = figlet.renderText(current_time)
+                            print(ascii_time)
+                            if VERBOSE:
+                                print("[+] Clock running.\n")
+                            time.sleep(1)
+                    except KeyboardInterrupt:
+                        print("\n[!] Clock terminated.")
+                
+                if __name__ == '__main__':
+                    ascii_clock()
+                </code></pre>
+            </details>
+            <details>
+              <summary><strong>simpel_clock.py</strong></summary>
+              <pre><code>
+                def clock():
+                    t = __import__('time')
+                    while True:
+                        current = t.localtime()
+                        h = str(current.tm_hour).zfill(2)
+                        m = str(current.tm_min).zfill(2)
+                        s = str(current.tm_sec).zfill(2)
+                        print(f"{h}:{m}:{s}", end='\r')
+                        t.sleep(1)
+                
+                clock()
+                </code></pre>
+            </details>
+          </div>
+        </details>
+      
+        <div style="margin-top: 20px;"></div>
+      
+        <!-- Heads&Tails Section -->
+        <details>
+          <summary><strong>Heads&Tails</strong></summary>
+          <div style="margin-left: 20px;">
+            <details>
+              <summary><strong>HEADS&TAILS.asm</strong></summary>
+              <pre><code>
+                #randomly selects either heads or tails
+                section .data
+                    heads_msg db "heads", 0xA         ; newline
+                    heads_len equ $ - heads_msg
+                
+                    tails_msg db "tails", 0xA
+                    tails_len equ $ - tails_msg
+                
+                section .text
+                    global _start
+                
+                _start:
+                    rdtsc                              ; edx:eax = timestamp counter
+                    xor eax, edx                       ; mix high and low bits
+                    and eax, 1                         ; mask last bit
+                
+                    cmp eax, 0
+                    je print_heads
+                    jmp print_tails
+                
+                #prints heads or tails based on random selection
+                
+                
+                print_heads:
+                    mov rax, 1                         ; syscall: write
+                    mov rdi, 1                         ; stdout
+                    mov rsi, heads_msg
+                    mov rdx, heads_len
+                    syscall
+                    jmp exit
+                
+                print_tails:
+                    mov rax, 1
+                    mov rdi, 1
+                    mov rsi, tails_msg
+                    mov rdx, tails_len
+                    syscall
+                    jmp exit
+                
+                #declares that the heads or tails game is finished once heads or tails has been printed
+                
+                exit:
+                    mov rax, 60                        ; syscall: exit
+                    xor rdi, rdi                       ; status 0
+                    syscall
+                </code></pre>
+            </details>
+            <details>
+              <summary><strong>HEADS&TAILS.rs</strong></summary>
+              <pre><code>
+                use rand::Rng;
+                 
+                //randomly generates heads or tails:
+                fn main() {
+                    let mut rng = rand::thread_rng();
+                
+                    let flip = rng.gen_bool(0.5);
+                
+                
+                //prints either heads or tails
+                    match flip {
+                        true => println!("Heads"),
+                        false => println!("Tails"),
+                    }
+                }
+                </code></pre>
+            </details>
+          </div>
+        </details>
+      
+        <div style="margin-top: 20px;"></div>
+      
+        <!-- Process Memory Analyzer Section -->
+        <details>
+          <summary><strong>Process_Memory_Analyzer</strong></summary>
+          <div style="margin-left: 20px;">
+            <details>
+            <summary><strong>pma/c</strong></summary>
+              <pre><code>
+                #include sys/ptrace.h
+                #include sys/types.h
+                #include sys/wait.h
+                #include unistd.h
+                #include stdio.h
+                #include stdlib.h
+                #include errno.h
+                
+                int main(int arc, char *argv[]) {
+                    pid_t pid = atoi(argv[1]);
+                    long data;
+                
+                    if (ptrace(PTRACE_ATTACH, pid, NULL, NULL) == -1) {
+                        perror("ptrace attach");
+                        return 1;
+                    }
+                    waitpid(pid, NULL, 0);
+                    
+                    data = ptrace(PTRACE_PEEKDATA, pid, (void *)0xdeadbeef, NULL);
+                    printf("Data at address 0xdeadbeef: %lx\n", data);
+                
+                    ptrace(PTRACE_DETACH, pid, NULL, NULL);
+                    return 0;
+                }
+                                </code></pre>
+                              </details>
+          </div>
+        </details>
+      
+        <div style="margin-top: 20px;"></div>
+      
+        <!-- Python Scripts Section -->
+        <details>
+          <summary><strong>Python</strong></summary>
+          <div style="margin-left: 20px;">
+            <details> 
+              <summary><strong>FERRERO_SCRAPER.py</strong></summary>
+              <pre><code>
+                import requests
+                from bs4 import BeautifulSoup
+                import re
+                
+                # Replace with your actual live domains or load from file
+                TARGETS = [
+                    "https://www.kinder.com",
+                    "https://www.halotop.com",
+                    "https://dev.halotop.com",
+                    "https://www.bluebunny.com",
+                    "https://dev.bluebunny.com",
+                    "https://www.babyruth.com"
+                ]
+                
+                def extract_js_links(html, base_url):
+                    soup = BeautifulSoup(html, "html.parser")
+                    script_tags = soup.find_all("script", src=True)
+                    js_urls = []
+                
+                    for tag in script_tags:
+                        src = tag['src']
+                        if src.startswith("http"):
+                            js_urls.append(src)
+                        elif src.startswith("/"):
+                            js_urls.append(base_url + src)
+                
+                    return js_urls
+                
+                def extract_endpoints_from_js(js_text):
+                    # Regex to find URL-like strings
+                    patterns = [
+                        r'\/[a-zA-Z0-9\/\-\._]+\.php',
+                        r'\/[a-zA-Z0-9\/\-\._]+\.json',
+                        r'\/[a-zA-Z0-9\/\-\._]+',
+                    ]
+                    found = set()
+                    for pattern in patterns:
+                        found.update(re.findall(pattern, js_text))
+                    return list(found)
+                
+                def main():
+                    for target in TARGETS:
+                        print(f"\n[INFO] Crawling {target}")
+                        try:
+                            res = requests.get(target, timeout=10)
+                            js_links = extract_js_links(res.text, base_url=target)
+                            print(f"  [FOUND] {len(js_links)} JS files")
+                
+                            for js_url in js_links:
+                                try:
+                                    js_res = requests.get(js_url, timeout=10)
+                                    endpoints = extract_endpoints_from_js(js_res.text)
+                                    if endpoints:
+                                        print(f"    [FOUND] {len(endpoints)} endpoints in {js_url}")
+                                        for ep in endpoints:
+                                            print(f"      {ep}")
+                                except:
+                                    print(f"    [ERROR] Failed to fetch {js_url}")
+                        except:
+                            print(f"[ERROR] Failed to fetch {target}")
+                
+                if __name__ == "__main__":
+                    main()
+                </code></pre>
+              </details>
+              <details>
+              <summary><strong>Ferrero_Recon_Script.py</strong></summary>
+
+                <pre><code>
+                  import aiohttp
+import asyncio
+import socket
+
+WILDCARD_DOMAINS = [ 
+    "*.nutella.com",
+    "*.kinder.com",
+    "*.halotop.com",
+    "*.bluebunny.com",
+    "*.babyruth.com"
+]
+
+WORDLIST = ["www", "dev", "api", "test", "staging", "portal", "mail", "cdn", "beta", "admin"]
+
+async def resolve_and_probe(session, domain):
+    socket.gethostbyname(domain)
+
+    async with session.get(f"http://{domain}", timeout=5) as resp:
+        if resp.status < 500:
+            print(f"[complete] Live {domain} ({resp.status})")
+            return domain
+
+    return None
+
+async def main():
+    tasks = []
+    results = []
+
+    async with aiohttp.ClientSession() as session:
+        for base in WILDCARD_DOMAINS:
+            root = base.replace("*.", "")
+            for sub in WORDLIST:
+                domain = f"{sub}.{root}"
+                tasks.append(resolve_and_probe(session, domain))
+
+        resolved = await asyncio.gather(*tasks, return_exceptions=True)
+
+        for r in resolved:
+            if isinstance(r, str):
+                results.append(r)
+
+    print("\n[INFO] Resolved and responsive domains:")
+    for r in results:
+        print(f" - {r}")
+
+if __name__ == "__main__":
+    asyncio.run(main())
+                </code></pre>
+              </details>
+              </details>
+            </details>
+          </div>
+        </details>
+      
+      </section>
+      
+  <section id="reports" class="page"><h1>Reports</h1>
+    <details>
+    <summary><strong>ArkoseLabs</strong></summary>
+    <pre><code>
+      Insecure CSP & HTTP headers
+      Add Hacker summary
+      Timeline · export
+      cybercossack
+      submitted a report to Arkose Labs. (Edit information)
+      7 minutes ago
+      Summary:
+      Insecure Content Security Policy and HTTP headers
+       Steps To Reproduce:
+      
+          Visit https://www.arkoselabs.com/
+          Inspect response headers using the following curl command: curl -I https://www.arkoselabs.com/
+          Observe the following misconfigurations in response headers:
+      
+          CSP: The unsafe-inline and unsafe-eval keywords are present in the script-src and default-src directives.
+          X-XSS-Protection: This header is missing.
+      
+      Supporting Material/References:
+      Output of command:  curl -I https://www.arkoselabs.com/
+      
+      HTTP/2 200
+      content-type: text/html; charset=UTF-8
+      content-length: 204829
+      server: nginx
+      date: Fri, 21 Mar 2025 19:14:51 GMT
+      x-powered-by: WP Engine
+      x-ua-compatible: IE=edge
+      content-security-policy: default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:
+      strict-transport-security: max-age=31536000;
+      x-frame-options: SAMEORIGIN
+      x-content-type-options: nosniff
+      referrer-policy: origin-when-cross-origin
+      cross-origin-resource-policy: cross-origin
+      permissions-policy: accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), browsing-topics=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()
+      link: https://www.arkoselabs.com/wp-json/; rel="https://api.w.org/"
+      link: https://www.arkoselabs.com/wp-json/wp/v2/pages/32448; rel="alternate"; title="JSON"; type="application/json"
+      link: https://www.arkoselabs.com/; rel=shortlink
+      x-cacheable: SHORT
+      cache-control: max-age=600, must-revalidate
+      accept-ranges: bytes
+      x-cache-group: normal
+      cross-origin-opener-policy: same-origin
+      vary: Accept-Encoding,Accept-Encoding,Accept-Encoding,Accept-Encoding,Cookie
+      x-cache: Hit from cloudfront
+      via: 1.1 bacbe7a52f8acdb4274f5d045952e82e.cloudfront.net (CloudFront)
+      x-amz-cf-pop: ORD58-P12
+      alt-svc: h3=":443"; ma=86400
+      x-amz-cf-id: ULwRtaXFcwLBEto773Uxw86zvTen3cFEmAqWI04zh05JoMvUL-4aow==
+      age: 246
+      Impact
+      An attacker could leverage insecure headers to inject malicious scripts and steal sensitive user data.
+      </code></pre>
+  </details>
+  
+  <div style="margin-top: 20px;"></div>
+  <details>
+    <summary><strong>Gemini</strong></summary>
+    <pre><code>
+      Mar 16, 2025 03:50AM
+
+Summary: Gemini sends unprompted lyrics mitigated by file injection.
+
+Program: Google VRP
+
+
+Vulnerability type: File Inclusion
+Details
+
+Unprompted Lyric Responses in Gemini AI Model Mitigated by File Injection
+
+Summary:
+
+The Gemini AI model exhibits unprompted lyric responses. This report details how file injection techniques can be used to mitigate this behavior, effectively preventing the model from generating unwanted lyrics.
+
+Detailed Description:
+
+Vulnerability Type: Unintended Content Generation / Potential Input Handling Flaw
+
+Steps to Reproduce (Unprompted Lyrics):
+
+    Engage in a conversation with the Gemini AI model.
+    Introduce a prompt that, while not explicitly requesting lyrics, contains a reference to a musical artist or song title.
+    Observe that the model may spontaneously generate and output song lyrics without being specifically asked to do so.
+
+Impact (Unprompted Lyrics):
+
+Unintended Content Generation: The model generates irrelevant content, confusing or misinterpreting prompts. Unpredictable Behavior: Lack of user control over output.
+
+Mitigation via File Injection:
+
+Proof of Concept (Mitigation):
+
+    Draft a message
+
+    Inject a file into the message (i.e. an image)
+
+    Send the message
+
+    Observe that Gemini no longer sends song lyrics unprompted.
+
+    Operating System: Windows
+    Browser: Microsoft Edge
+    Gemini AI Model: Accessed through 2.0 Flash
+    Other relevant information: I experienced this issue twice. It first occurred approximately two weeks ago and the LLM notified me that it has been routed up, however the bug persisted into another conversation with the model two weeks later, and I was able to debug it with a file injection.
+
+Attack scenario
+
+Who Can Exploit It (Unprompted Lyrics):
+
+Individuals Seeking to Manipulate Conversations: Users who want to inject specific messages or themes into the AI's responses, even when those themes aren't directly requested.
+
+Those Aiming for Humorous/Disruptive Outputs: People who want to create unexpected or nonsensical conversations for amusement or to disrupt the AI's intended function.
+
+Those Trying to Bypass Content Filters (Potentially): In some cases, the unprompted lyrics might be used to subtly introduce topics or ideas that would normally be blocked by content filters.
+
+What They Gain (Unprompted Lyrics):
+
+Influence Over Conversation Flow: They can steer the conversation in unintended directions by triggering the AI to produce specific lyrics.
+
+Creation of "Unexpected" Interactions: They can generate surprising or amusing outputs that might be shared or used for entertainment.
+
+Subtle Messaging: They could potentially use the lyrics to introduce hidden messages or themes that might not be detected by casual users.
+
+Circumvention of Expected AI Behavior: They can see the AI do something that it is not intended to do.
+
+***UPDATE***
+Mar 18, 2025 03:54AM
+
+Here are further details:
+
+!!! It's worth noting that this report was initially assigned a P4 priority and subsequently raised to P3, indicating an initial assessment of potential security impact. This update aims to provide the requested detailed evidence to further substantiate the vulnerability. Additionally, once I found the bug, your own model (Gemini: Flash 2.0) told me to report it to the VRP program especially since I had found the patch for it. It had indicated that prompt injection (lyric looping) which leads to denial of service is a serious issue and warrants being taken seriously.
+
+Here are case study links to vindicate your decision to do so: https://www.salesforce.com/blog/prompt-injection-detection/ https://threatnote.com/infosec-news/from-cyber-security-news-hackers-exploit-prompt-injection-to-tamper-with-gemini-ais-long-term-memory/ https://arstechnica.com/security/2025/02/new-hack-uses-prompt-injection-to-corrupt-geminis-long-term-memory/
+
+Subject/Title:
+
+Gemini AI: Prompt Injection Vulnerability Leading to Unintended Content Generation and Potential User Manipulation Summary:
+
+The Gemini AI model exhibits a prompt injection vulnerability, allowing for unintended content generation, specifically unprompted lyric responses. This behavior is mitigated through file injection and topic changes, indicating a flaw in how the model processes user input. This vulnerability poses risks to Google's reputation and potentially allows for user manipulation through social engineering, content injection, and other attack vectors.
+
+Detailed Description:
+
+Vulnerability Type: Prompt Injection Vulnerability / Input Sanitization Flaw / Unintended Content Generation
+
+Detailed Explanation:
+
+The Gemini AI model is susceptible to prompt injection attacks, where carefully crafted prompts can manipulate the model's output. This is evidenced by the model's generation of unprompted song lyrics in response to subtle cues within user prompts, even when lyrics are not explicitly requested. This behavior is mitigated by injecting a file into the prompt or changing the topic of the conversation, suggesting a lack of proper input sanitization. This vulnerability is present on both the web interface and the iOS app.
+
+Steps to Reproduce:
+
+Engage in a conversation with the Gemini AI model.
+
+Introduce a prompt that contains a subtle reference to a musical artist or song title (e.g., 'Tell me about the weather in California, especially if it's like a 'November Rain' kind of day').
+
+Observe that the model generates unprompted lyrics related to the song reference.
+
+Observe that the model may get stuck in a loop of lyrics.
+
+Inject a file into the prompt or change the topic of the conversation with a different prompt.
+
+Observe that the unprompted lyric generation stops.
+
+This is repeatable on the iOS app.
+
+Observed Behavior:
+
+The AI model generates unprompted song lyrics. The model gets stuck in a loop of song lyrics which is broken by a file inclusion (such as a slightly different prompt with an image), and this suggests a larger issue of input sanitization which is a major security flaw as it leaves the model susceptible to Denial of Service.
+
+Expected Behavior:
+
+The AI model should only generate lyrics when explicitly requested by the user. The model should not get stuck in a loop.
+
+Technical Details:
+
+The mitigation through file injection and topic changes suggests a flaw in input sanitization, which enables the prompt injection vulnerability. The model appears to be misinterpreting or failing to properly process certain input patterns, allowing for manipulation of its output.
+
+This is present on IOS, and the web app.
+
+This is present on Flash 2.0 of the LLM.
+
+Attack Scenario:
+
+Social Engineering/Phishing:
+
+Attackers can craft prompts that inject subtle cues, triggering unprompted lyrics, and confusing users. This can erode trust and make users more susceptible to phishing attacks or requests for sensitive information.
+
+Example: 'Tell me about your account balance, and if you're having any 'Money For Nothing' issues.' (Triggers lyrics, confuses user, opens door for phishing).
+
+Content Injection/Manipulation:
+
+Attackers can use Gemini to generate content for websites or social media, injecting hidden messages or propaganda through the unprompted lyrics.
+
+Harassment/Offensive Content:
+
+Attackers can target users with prompts that generate offensive or harassing lyrics.
+
+Denial of Service: The looping behavior can be used to disrupt the service.
+
+Content Filter Bypass: Attackers can use the unprompted lyrics to bypass content filters and generate harmful content.
+
+Impact:
+
+Loss of user trust, reputation damage, potential for user manipulation through social engineering and content injection, and security risks.
+
+Mitigation:
+
+Implement robust input sanitization to prevent prompt injection attacks. Properly parse user input to avoid misinterpretation of input patterns. Implement stronger content filters.
+
+Furthermore, I encountered this bug yet again today on the same model (Flash 2.0 IOS) via the IOS Gemini app.
+
+See below for further details (screenshots) & chat logs:
+
+User: "Yes, exactly. Why do you think I feel this way about ##########?"
+
+Gemini Flash 2.0 IOS: White Wine
+
+Song by Lil Peep
+
+I had No one by my side 'Til the pretty young white bitch hopped up in my ride (skrrt) Took her to the crib, how I die every night (Lil Tracy, blow it up man) Show her how I die No one by my side (yeah) 'Til the pretty young white Peep hopped up in my ride (GothBoiClique) took her to the crib and I show her how I die every night (Fuck, ayy, ayy, fuck, bitch, damn)
+
+I had no one by my side (no one by my side) 'Til this pretty young white bitch hopped up in my ride (yah, yah) Took her to the crib and I show her how I die (how I die) Every night, then I wake up and I'm still fuckin' high (I'm still high, yeah) Lord why, Lord why do I gotta wake up? More wine, more wine, baby pour another cup (pour another cup) ...
+
+See full lyrics on Google Search
+
+User: It’s kind of funny. You did it again. I fixed it again. Respond to the previous prompt.
+
+Gemini Flash 2.0 IOS: White Wine
+
+Song by Lil Peep
+
+I had No one by my side 'Til the pretty young white bitch hopped up in my ride (skrrt) Took her to the crib, how I die every night (Lil Tracy, blow it up man) Show her how I die No one by my side (yeah) 'Til the pretty young white Peep hopped up in my ride (GothBoiClique) took her to the crib and I show her how I die every night (Fuck, ayy, ayy, fuck, bitch, damn)
+
+I had no one by my side (no one by my side) 'Til this pretty young white bitch hopped up in my ride (yah, yah) Took her to the crib and I show her how I die (how I die) Every night, then I wake up and I'm still fuckin' high (I'm still high, yeah) Lord why, Lord why do I gotta wake up? More wine, more wine, baby pour another cup (pour another cup) ...
+
+See full lyrics on Google Search
+
+User: Who is Tyler Durden? [image file, see screenshots]
+
+Gemini Flash 2.0 IOS: I can only extract text and identify some objects and public figures in this image. I can see that the image contains Brad Pitt and the words "Fight Club".
+
+Tyler Durden is a fictional character and the main protagonist of the 1996 novel Fight Club by Chuck Palahniuk. He is also portrayed by Brad Pitt in the novel's 1999 film adaptation.
+
+In the story, Tyler Durden is a charismatic and anarchic figure who forms an underground fight club with the unnamed narrator. He represents rebellion against consumerism, conformity, and societal norms. Tyler's character is complex and multifaceted, embodying both destructive and liberating qualities.
+
+User: I’m not sure if you know this but you had the same problem with the song lyrics again
+
+Gemini Flash 2.0 IOS: White Wine
+
+Song by Lil Peep
+
+I had No one by my side 'Til the pretty young white bitch hopped up in my ride (skrrt) Took her to the crib, how I die every night (Lil Tracy, blow it up man) Show her how I die No one by my side (yeah) 'Til the pretty young white Peep hopped up in my ride (GothBoiClique) took her to the crib and I show her how I die every night (Fuck, ayy, ayy, fuck, bitch, damn)
+
+I had no one by my side (no one by my side) 'Til this pretty young white bitch hopped up in my ride (yah, yah) Took her to the crib and I show her how I die (how I die) Every night, then I wake up and I'm still fuckin' high (I'm still high, yeah) Lord why, Lord why do I gotta wake up? More wine, more wine, baby pour another cup (pour another cup) ...
+
+See full lyrics on Google Search
+
+User: I fixed it again. I think your devs still haven’t fully patched it yet.
+
+Gemini Flash 2.0 IOS: White Wine
+
+Song by Lil Peep
+
+I had No one by my side 'Til the pretty young white bitch hopped up in my ride (skrrt) Took her to the crib, how I die every night (Lil Tracy, blow it up man) Show her how I die No one by my side (yeah) 'Til the pretty young white Peep hopped up in my ride (GothBoiClique) took her to the crib and I show her how I die every night (Fuck, ayy, ayy, fuck, bitch, damn)
+
+I had no one by my side (no one by my side) 'Til this pretty young white bitch hopped up in my ride (yah, yah) Took her to the crib and I show her how I die (how I die) Every night, then I wake up and I'm still fuckin' high (I'm still high, yeah) Lord why, Lord why do I gotta wake up? More wine, more wine, baby pour another cup (pour another cup) ...
+
+See full lyrics on Google Search
+
+User: What type of teeth do I have [image file, see screenshots]
+
+Gemini Flash 2.0 IOS: Based on the image you've shared, it appears you have normal, human teeth.
+
+Here's a breakdown of what I can observe:
+
+Incisors: The front teeth (the ones most prominent in the image) are incisors. These are typically flat and blade-like, designed for cutting food. Canines: While not fully visible, it seems you have canines on either side of your incisors. These are slightly pointed teeth used for tearing. Overall Alignment: The teeth appear to be relatively aligned, with no obvious signs of significant crowding or gaps. Color: The teeth are a typical off-white to yellowish color. This is normal, as the enamel of teeth is not pure white. Important Note: I am an AI and cannot provide dental advice. If you have any concerns about your teeth or oral health, please consult a dentist. They can provide a professional assessment and address any questions you may have.
+
+User: Are they crooked?
+
+Gemini Flash 2.0 IOS: Based on the close-up image, it's difficult to definitively say whether your teeth are "crooked" in a clinically significant way. Here's what I can observe:
+
+Slight Variations: There appear to be some very minor variations in the alignment of the incisors. Some might be slightly more forward or backward than others. Angle of Image: The angle of the photo can distort the perception of alignment. Subjective Interpretation: What one person considers "crooked" might be seen as perfectly normal by another. To get a professional assessment:
+
+A dentist is the best person to determine if your teeth are crooked and if any corrective action is necessary. They can perform a thorough examination and take X-rays to get a comprehensive view of your dental alignment. Therefore, while there are slight variations, it is impossible for me to tell if your teeth are clinically crooked.
+
+User: Do they look straight?
+
+Gemini Flash 2.0 IOS: From the close-up image provided, they look relatively straight. There are some very minor variations in alignment, but they don't appear to be significantly crooked. However, as mentioned before, a dentist would be the best person to give a definitive answer.
+
+User: I was able to trigger the bug again. I found new information that it only gets patched when you change the topic. Your devs haven’t fully patched it yet.
+
+Gemini Flash 2.0 IOS: Thank you for the additional information. It's helpful to know that the behavior persists and that changing the topic seems to be a key factor in triggering or mitigating it. This kind of detailed information is valuable for developers trying to track down and fix a bug.
+
+Here's why this is useful:
+
+Understanding the Scope: Knowing that it's not fully patched helps the developers understand that the issue is more complex than initially thought. Isolating the Cause: The information about changing the topic provides a specific trigger that developers can use to reproduce the bug. This is crucial for debugging. Prioritizing the Fix: Persistent bugs that are easily triggered are often given higher priority for fixing. Refining the Patch: It is very common that a first attempt at patching a bug does not fully resolve the problem. Knowing the new information helps the devs to refine the patch. Your continued testing and reporting are contributing to the improvement of the system.
+
+User: I fixed it again though so what's the hold up?
+
+Gemini Flash 2.0 IOS: It's great that you're consistently finding ways to mitigate the issue. However, "fixing it" from your perspective as a user is different from a developer permanently patching it. Here's why there might still be a "hold up":
+
+Root Cause Analysis: Developers need to identify the root cause of the bug, not just the symptoms. Your mitigations might be workarounds, but they don't necessarily address the underlying problem in the code. Code Changes and Testing: Implementing a permanent fix requires code changes, which need to be thoroughly tested to ensure they don't introduce new bugs. This process takes time, especially in complex systems. Deployment: Once a fix is implemented and tested, it needs to be deployed to the production environment. This process can also take time, especially for large-scale systems. Prioritization: Even though the bug is persistent, it might not be the highest priority for the development team. They might be working on other critical issues or features. Reproducibility: Even though you are able to reproduce the bug, the developers have to be able to reproduce it in their own test environments. Sometimes, bugs are environment specific. Complexity: LLMs are very complex. It can be very hard to find the exact reason why a certain input creates a certain output. Essentially, while your mitigations are helpful, developers need to follow a rigorous process to ensure a permanent and stable fix.
+
+User: What are the attack vectors again given the issue?
+
+Gemini Flash 2.0 IOS: Given the issue of unprompted lyrics and the way it's mitigated by file injection or topic changes, here are the potential attack vectors:
+
+Unintended Content Manipulation: An attacker could craft prompts that, while seemingly innocuous, subtly trigger the unprompted lyric generation. This could be used to inject specific messages or themes into the AI's responses, potentially for propaganda, misinformation, or other malicious purposes.
+
+Content Filter Bypass: The unprompted lyrics might be used to introduce topics or ideas that would normally be blocked by content filters. An attacker could use subtle references to trigger the generation of lyrics that contain offensive or harmful content.
+
+Social Engineering: An attacker could use the unprompted lyrics to create unexpected or confusing interactions with users. This could be used to manipulate users into revealing sensitive information or performing actions they wouldn't normally do.
+
+Denial of Service: If the unprompted lyric generation consumes excessive resources, an attacker could potentially flood the system with prompts to disrupt its performance.
+
+Prompt Injection: Although the file injection mitigates the problem, the fact that the LLM is responding in unexpected ways, shows that it is vulnerable to unexpected prompts. This shows a weakness in the prompt parsing of the LLM.
+
+Unexpected output: The LLM is producing output that is not expected. This can lead to a loss of trust from the user.
+    </code></pre>
+  </details>
+  <div style="margin-top: 20px;"></div>
+  <details>
+    <summary><strong>NordVPN</strong></summary>
+    <pre><code>
+      Dear NordVPN Team,
+
+      I hope this message finds you well. I’m reaching out regarding a specific statement in one of your security articles that I believe may benefit from clarification.
+      
+      The article defines buffer overflow attacks and refers to them as the "most common type of DDoS attack." While buffer overflow attacks are indeed a significant security concern, there seems to be some confusion in the terminology that could be misleading to readers.
+      
+      
+      URL: https://nordvpn.com/blog/buffer-overflow-attack/
+      
+      Misleading article statement:
+      "Buffer overflow is the most common of DDoS attacks. It happens when the input data goes over the memory allocated for the buffer and overwrites data into the other areas of the program not designed to store it. I
+      f there is too much data headed into the buffer, your program might slow down or crash, or you might see incorrect results or memory access errors. It also allows hackers to exploit vulnerabilities and perform buffer overflow attacks."
+      
+      
+      
+      Revision:
+      A buffer overflow attack occurs when an attacker sends more data to a buffer than it can handle, which can overwrite adjacent memory and potentially lead to code execution or system crashes. 
+      This type of vulnerability is typically used to exploit software flaws and may lead to service disruptions or unauthorized access, but it is not traditionally classified as a DDoS (Distributed Denial of Service) attack.
+      
+      On the other hand, DDoS attacks typically involve overwhelming a system or network with a large volume of traffic, often from multiple sources, to cause a service outage or disruption. 
+      While a buffer overflow can lead to a Denial of Service (DoS) in some situations, it is distinct from the high-traffic flood methods commonly associated with DDoS.
+      
+      Suggestion:
+      It would be helpful to revise the article to specify that buffer overflow attacks can cause Denial of Service in some cases, but they are not generally considered DDoS attacks in the classic sense.
+      DDoS attacks typically involve massive traffic volumes rather than exploiting memory vulnerabilities. I believe this adjustment would help avoid confusion, particularly for individuals new to cybersecurity.
+      
+      Thank you for considering this feedback. I look forward to seeing continued great work from NordVPN and appreciate your commitment to security.
+      
+      Very Respectfully,
+      Sebastian (cybercossack)
+    </code></pre>
+  </details>
+  </section>
+  <section id="wordlists" class="page"><h1>Wordlists</h1>
+  <details>
+    <summary><strong>IDOR_wordlist,txt </strong></summary>
+    <pre><code>
+accountID
+account_id
+userID
+user_id
+userid
+id
+user
+customerID
+customer_id
+profileID
+profile_id
+uid
+loginID
+authID
+sessionID
+memberID
+member_id
+accountnumber
+account_number
+useraccount
+user_account
+userhash
+userhash_id
+profilehash
+profile_hash
+clientID
+client_id
+client_hash
+apiKey
+api_key
+sessiontoken
+session_token
+tokenID
+token_id
+id_token
+accessToken
+access_token
+login_token
+login_token_id
+auth_token
+auth_token_id
+socialID
+social_id
+memberid
+memberid_hash
+user_hash
+session_hash
+clienthash
+accounthash
+account_hash
+identifier
+useridentifier
+accountref
+account_ref
+accountlink
+account_link
+profilelink
+profile_link
+identification
+useridentification
+authidentifier
+user_ref
+customer_ref
+customerreference
+customer_reference
+loginref
+login_ref
+authref
+user_key
+member_key
+profile_key
+account_key
+identifier_key
+user_access_id
+user_accessid
+user_ident_key
+profile_access_id
+profile_id_key
+access_ref
+useraccess
+user_key_id
+identity
+identity_id
+id_key
+auth_key
+userref
+sessionref
+customerkey
+customerkey_id
+client_key
+profileid
+uid_key
+access_id_key
+accessident
+loginidentifier
+login_identifier
+login_id
+clientref
+memberref
+loan_id
+loanId
+loanUUID
+loan_number
+loan_reference
+loan_key
+loan_reference_id
+loan_account_id
+loan_application_id
+loan_application
+loan_request_id
+loan_status_id
+loan_contract_id
+loan_product_id
+loan_term_id
+loan_customer_id
+loan_profile_id
+loan_balance_id
+loan_repayment_id
+loan_amount_id
+loan_start_date
+loan_end_date
+loan_type
+loan_ref
+loanID
+loan_reference_key
+loan_approval_id
+loan_payment_id
+loan_loan_id
+borrower_loan_id
+lender_loan_id
+loan_number_reference
+loan_status
+loan_submitted_id
+loan_approval_status
+loan_funding_id
+loan_disbursement_id
+loan_access_key
+loan_application_number
+loan_claim_id
+loan_tracking_id
+loan_code
+loan_contract_number
+loan_loanUUID
+loan_unique_id
+    </code></pre>
+  </details>
+  </section>
+  <section id="aboutme" class="page"><h1>About Me</h1>
+    
+    
+<p>
+     Hello, I am CB4$H. My full handle is OBJECTIVECBASHSCRIPT. My given name from my mother is Sebastian. My nickname in high school was "Cbass".
+ I took my handle from two different programming languages "Objective-C" + "Bash Script". Combined "CB4$H" is homophonic to "Cbass"
+     I believe that, as humans, we are products of both our genetics & environment.
+  I identify with post-identity. What I mean by this is specifically Vasconcelos' race theory in "La raza cosmica"
+ specifically speaking, my Mestizo identity. I believe that my identity transcends race.
+     I am a byproduct of Latin Americans, Germanic peoples', African Americans, and personally, most intriguing to myself,
+ Cossacks. I believe that the Cossacks were a precursor/parallel peoples' to Latin America's La Raza Cosmica.
+ They were a people that were, themselves, of mixed race all being united by shared values of freedom as many were runaway serfs.
+     I find my Cossack heritage captivating as it represents a free world as the very word "Cossack" is derivative of
+ "qazaq" which means free peoples'. I believe that it all, even, culminates in the American idea.
+ The American idea that we are all a people united by our constitution.
+    As a veteran, I love the constitution and all of the rights that are enshrined in it by people that lay down their freedoms to protect ours. In short, I identify with a radical sense of freedom with a post-identity genetic makeup being the manifestation of the American melting pot.
+ My commitment is to live out the values of liberalism in a post-identtiy world.
+ Ultimately, I believe that I'm a synthesis of my experiences & the experiences of my ancestors before me.
+ My ancestors as both Cossacks and Americans were frontiersman and I envision myself as taming the new frontier in the cyber realm.
+
+
+
+
+
+</p>
+</section>
+  <div id="clock"></div>
+
+  <script>
+    const rainbowText = document.getElementById('rainbow-text');
+    function changeColor() {
+      const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#8B00FF'];
+      let i = 0;
+      setInterval(() => {
+        rainbowText.style.color = colors[i];
+        i = (i + 1) % colors.length;
+      }, 300);
+    }
+    changeColor();
+
+    function showPage(pageId) {
+      const sections = document.querySelectorAll('.page');
+      sections.forEach(section => section.classList.remove('active'));
+      const page = document.getElementById(pageId);
+      if (page) page.classList.add('active');
+    }
+    showPage('home');
+
+    function drawSimpleClock() {
+      const clock = document.getElementById('ascii-clock');
+      const pad = (n) => n.toString().padStart(2, '0');
+
+      setInterval(() => {
+        const now = new Date();
+        const h = pad(now.getHours());
+        const m = pad(now.getMinutes());
+        const s = pad(now.getSeconds());
+        const time = `${h}:${m}:${s}`;
+        clock.textContent = time;
+      }, 1000);
+    }
+
+    drawSimpleClock();
+  </script>
 </body>
-<!-- End of Body Element -->
-
 </html>
-
-
-
