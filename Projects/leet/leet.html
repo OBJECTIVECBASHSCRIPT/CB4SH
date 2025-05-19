@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Numeric Pattern Solver</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .pattern { font-size: 24px; margin-bottom: 10px; }
+    .result { margin-top: 10px; font-weight: bold; }
+    input[type="number"] { width: 60px; padding: 5px; font-size: 18px; }
+    button { padding: 6px 12px; font-size: 16px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <h2>Solve the Pattern</h2>
+  <div class="pattern" id="patternDisplay"></div>
+  <button onclick="checkAnswer()">Submit</button>
+  <div class="result" id="result"></div>
+
+  <script>
+    let sequence = [];
+    let correctAnswer;
+    let missingIndex;
+
+    function generatePattern() {
+      const start = Math.floor(Math.random() * 5) + 2; // start between 2 and 6
+      const ratio = Math.floor(Math.random() * 4) + 2; // ratio between 2 and 5
+      const length = 6;
+      sequence = [start];
+
+      for (let i = 1; i < length; i++) {
+        sequence.push(sequence[i - 1] * ratio);
+      }
+
+      missingIndex = Math.floor(Math.random() * (length - 2)) + 1; // not first or last
+      correctAnswer = sequence[missingIndex];
+
+      const display = sequence.map((val, idx) => 
+        idx === missingIndex ? `<input type="number" id="userInput">` : val
+      ).join(", ");
+
+      document.getElementById("patternDisplay").innerHTML = display;
+      document.getElementById("result").textContent = "";
+    }
+
+    function checkAnswer() {
+      const userVal = parseInt(document.getElementById('userInput').value);
+      const result = document.getElementById('result');
+
+      if (userVal === correctAnswer) {
+        result.textContent = "Correct! Well done.";
+        result.style.color = "green";
+      } else {
+        result.textContent = `Incorrect. The correct answer was ${correctAnswer}.`;
+        result.style.color = "red";
+      }
+
+      setTimeout(generatePattern, 3000); // Load a new pattern after 3 seconds
+    }
+
+    // Initialize on load
+    generatePattern();
+  </script>
+
+</body>
+</html>
