@@ -1,6 +1,0 @@
-*** I HAD TO CONNECT TO A VPN TO GET TO THIS STATE, DEPENDING ON YOUR CONNECTION YOU MAY HAVE TO AS WELL ***
-1) Open Windows PowerShell Terminal
-2) I typed "ssh bandit0@bandit.labs.overthewire.org -p 2220"
-3) sys prompts for password
-4) type "bandit0" 
-5) level cleared
