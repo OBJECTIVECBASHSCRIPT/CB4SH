@@ -1,0 +1,5 @@
+1) Open a new session of Windows Powershell
+2) type: "ssh bandit1@bandit.labs.overthewire.org -p 2220" 
+3) type "ls"
+4) type "cat ./-"
+5) See the password concatenated. 
