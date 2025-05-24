@@ -1,0 +1,6 @@
+1) Launch Windows Powershell
+2) Type: "ssh bandit2@bandit.labs.overthewire.org -p 2220"
+3)  Type: "ls" 
+4) Output: "spaces in this filename" 
+5) Type: "cat "spaces in this filename" 
+6) Output: flag
